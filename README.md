@@ -1,1 +1,1 @@
-# lq_server_smaple
+# lq_server_sample
