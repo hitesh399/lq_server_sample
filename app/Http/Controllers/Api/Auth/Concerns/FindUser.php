@@ -38,7 +38,7 @@ trait FindUser
 
             $this->user = User::where('id', $user_id);
         }
-        $this->user = $this->user->withTrashed()->first();
+        $this->user = $this->user->with('role')->withTrashed()->first();
 
         /**
          * If user does not exists in  database.

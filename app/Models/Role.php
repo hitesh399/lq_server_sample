@@ -12,7 +12,7 @@ class Role extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'parent_role_id', 'title', 'description', 'client_ids', 'choosable', 'landing_page', 'settings'
+        'name', 'parent_role_id', 'title', 'description', 'client_ids', 'choosable', 'landing_portal', 'settings'
     ];
 
      /**
@@ -28,7 +28,7 @@ class Role extends Model
         'name'=> 'string',
         'description'=> 'string',
         'choosable'=> 'string',
-        'landing_page'=> 'string',
+        'landing_portal'=> 'string',
         'created_at' => 'datetime',
         'updated_at' => 'datetime'
     ];

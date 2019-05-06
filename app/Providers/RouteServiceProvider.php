@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers\Api';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -66,8 +66,8 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-            ->middleware([\Singsys\LQ\Middleware\LqApiMiddleware::class])
-            ->namespace($this->namespace . '\Api')
+            ->middleware([\Singsys\LQ\Middleware\CorsMiddleware::class, \Singsys\LQ\Middleware\LqApiMiddleware::class])
+            ->namespace($this->namespace)
             ->group(base_path('routes/api.php'));
     }
 }
