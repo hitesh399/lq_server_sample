@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
+use Laravel\Passport\HasApiTokens;
 use Singsys\LQ\Lib\Concerns\LqToken;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Passport\HasApiTokens;
+use Singsys\LQ\Lib\Media\Relations\Concerns\HasMediaRelationships;
 
 class User extends Authenticatable
 {
-    use Notifiable, LqToken, SoftDeletes, HasApiTokens;
+    use Notifiable, LqToken, SoftDeletes, HasApiTokens, HasMediaRelationships;
 
     /**
      * The attributes that are mass assignable.
@@ -56,5 +57,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Device::class)->withPivot([
             'settings', 'login_index', 'active'
         ])->using(Relations\DevicePivot::class);
+    }
+    public function profileImage() {
+        return $this->morphOneMedia(\Config::get('lq.media_model_instance'), 'mediable', 'image', __FUNCTION__);
+    }
+    public function photos() {
+        return $this->morphManyMedia(\Config::get('lq.media_model_instance'), 'mediable', 'user_photos', __FUNCTION__);
     }
 }
