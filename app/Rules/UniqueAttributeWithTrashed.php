@@ -18,7 +18,7 @@ class UniqueAttributeWithTrashed implements Rule
     private $attribute = null;
     private $table = null;
 
-    public function __construct($ignore_id = null,$table = null)
+    public function __construct($ignore_id = null, $table = null)
     {
         //
         $this->ignoreId = $ignore_id;
@@ -38,8 +38,7 @@ class UniqueAttributeWithTrashed implements Rule
         $this->attribute = $attribute;
         $db = $this->table::where($attribute, $value)->withTrashed();
 
-        if( $this->ignoreId ){
-
+        if ($this->ignoreId) {
             $db->where('id', '<>', $this->ignoreId);
         }
 

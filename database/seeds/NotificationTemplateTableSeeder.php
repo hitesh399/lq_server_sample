@@ -13,7 +13,7 @@ class NotificationTemplateTableSeeder extends Seeder
     {
         $model = config('lq.notification_template_class');
 
-        $model::updateOrCreate(['name' => 'WELCOME_MAIL'],[
+        $model::updateOrCreate(['name' => 'WELCOME_MAIL'], [
             'name' => 'WELCOME_MAIL',
             'subject' => 'Thank You to Join Us.',
             'body' => 'Dear {user.name} <br> Please <a href="{link}"> click here </a> to verify your email or you can use this code {user_verification.token}',
@@ -28,7 +28,7 @@ class NotificationTemplateTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'FORGET_PASSWORD_EMAIL'],[
+        $model::updateOrCreate(['name' => 'FORGET_PASSWORD_EMAIL'], [
             'name' => 'FORGET_PASSWORD_EMAIL',
             'subject' => 'Reset Password Link',
             'body' => 'Dear {user.name} <br> Please <a href="{link}"> click here </a> to reset the password',
@@ -43,7 +43,7 @@ class NotificationTemplateTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'FORGET_PASSWORD_SMS'],[
+        $model::updateOrCreate(['name' => 'FORGET_PASSWORD_SMS'], [
             'name' => 'FORGET_PASSWORD_SMS',
             'type' => 'sms',
             'subject' => 'Reset Password Link',
@@ -59,7 +59,7 @@ class NotificationTemplateTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'EMAIL_VERFICATION_EMAIL'],[
+        $model::updateOrCreate(['name' => 'EMAIL_VERFICATION_EMAIL'], [
             'name' => 'EMAIL_VERFICATION_EMAIL',
             'subject' => 'Email Verification Link',
             'body' => 'Dear {user.name} <br> Please <a href="{link}"> click here </a> to verify the email.',
@@ -74,7 +74,7 @@ class NotificationTemplateTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MOBILE_VERFICATION_SMS'],[
+        $model::updateOrCreate(['name' => 'MOBILE_VERFICATION_SMS'], [
             'name' => 'MOBILE_VERFICATION_SMS',
             'type' => 'sms',
             'subject' => 'Email Verification Link',

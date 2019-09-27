@@ -13,7 +13,8 @@ class LoginController extends Controller
 {
     use Concerns\FindUser, CryptTrait;
     //
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
         $this->validate($request, [
             $this->username() => 'required|string',
             'password' => 'required|string'
@@ -36,9 +37,9 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function refreshToken(Request $request) {
-
-        $this->validate($request,[
+    public function refreshToken(Request $request)
+    {
+        $this->validate($request, [
             'refresh_token' => 'string',
         ]);
 
@@ -46,41 +47,41 @@ class LoginController extends Controller
 
         try {
             $refresh_token = json_decode($this->decrypt($request->refresh_token));
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $this->setErrorCode('invalid_refresh_token');
             throw OAuthServerException::invalidRefreshToken();
         }
         $oauth_refresh_tokens = \DB::table('oauth_refresh_tokens')->where('id', $refresh_token->refresh_token_id)->first();
 
         // When refresh token does not exists in database.
-        if(!$oauth_refresh_tokens) {
+        if (!$oauth_refresh_tokens) {
             $this->setErrorCode('refresh_token_not_exist');
             throw OAuthServerException::invalidRefreshToken();
         }
 
         // Check Refresh token expire date
-        if(\Carbon\Carbon::parse($oauth_refresh_tokens->expires_at)->isPast()){
+        if (\Carbon\Carbon::parse($oauth_refresh_tokens->expires_at)->isPast()) {
             $this->setErrorCode('refresh_token_expired');
             throw OAuthServerException::invalidRefreshToken();
         }
 
-        if($oauth_refresh_tokens->revoked == 1){
+        if ($oauth_refresh_tokens->revoked == 1) {
             $this->setErrorCode('refresh_token_revoked');
             throw OAuthServerException::invalidRefreshToken();
         }
         $access_token = \DB::table('oauth_access_tokens')->where('id', $refresh_token->access_token_id)->first();
 
-        if(!$access_token){
+        if (!$access_token) {
             $this->setErrorCode('access_token_not_exist');
             throw OAuthServerException::invalidRefreshToken();
         }
 
-        if($access_token->client_id != $request->client()->id ) {
+        if ($access_token->client_id != $request->client()->id) {
             $this->setErrorCode('refresh_token_invalid_client');
             throw OAuthServerException::invalidGrant();
         }
 
-        if($access_token->device_id != $request->device()->id ) {
+        if ($access_token->device_id != $request->device()->id) {
             $this->setErrorCode('refresh_token_invalid_device');
             throw OAuthServerException::invalidGrant();
         }
@@ -100,9 +101,10 @@ class LoginController extends Controller
      * To verify the password
      * @param \Illuminate\Http\Request
      */
-    private function verifyPassword(Request $request) {
+    private function verifyPassword(Request $request)
+    {
         # Throw the exception if password does not match.
-        if(!\Hash::check($request->password, $this->user->password)) {
+        if (!\Hash::check($request->password, $this->user->password)) {
             throw ValidationException::withMessages([
                 'password' => [trans('auth.password_wrong')],
             ]);
@@ -115,7 +117,8 @@ class LoginController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    private function sendLoginResponse(Request $request){
+    private function sendLoginResponse(Request $request)
+    {
         # Generate the User Access Token
         $token = $this->user->createUserToken();
         # Linked to user with respected device
@@ -136,7 +139,8 @@ class LoginController extends Controller
     /**
      * Update the device and user relation.
      */
-    private function linkToDevice($request) {
+    private function linkToDevice($request)
+    {
         $user_device = $this->user->devices()->where('devices.id', $request->device()->id)->first();
         $max_login_index = $request->device()->users()->withTrashed()->max('login_index');
         $max_login_index = $max_login_index !== null ? $max_login_index +1 : 0;
@@ -150,11 +154,9 @@ class LoginController extends Controller
                     ]
                 ]
             ]);
-        }
-        else {
+        } else {
             $request->device()->users()->syncWithoutDetaching([$this->user->id => ['active' => 'Yes', 'revoked' => '0']]);
         }
         return $this->user->devices()->where('devices.id', $request->device()->id)->first();
     }
-
 }

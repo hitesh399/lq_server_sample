@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,8 +26,11 @@ Route::get('my-profile', 'Auth\MyProfileController@index')->name('my-profile');
 Route::patch('logout', 'Auth\MyProfileController@logout')->name('logout');
 Route::post('generate-token', 'Auth\LoginController@refreshToken')->name('generate-token');
 
-/**
+/*
  * Device APi.
  */
 Route::get('device/user', 'DeviceController@deviceLoginUser')->name('device-user-list');
 Route::patch('device/user/{id}/revoke', 'DeviceController@revokedDeviceUser')->name('device-user-revoke');
+
+Route::apiResource('media', 'Media\MediaController');
+Route::post('media-token', 'Media\MediaTokenController@store');

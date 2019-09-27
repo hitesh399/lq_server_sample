@@ -14,7 +14,6 @@ class UserVerificationTable extends Migration
     public function up()
     {
         Schema::create('user_verifications', function (Blueprint $table) {
-
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
@@ -26,7 +25,6 @@ class UserVerificationTable extends Migration
             $table->string('token', 500);
             $table->enum('for', ['forgot_password', 'email_verification', 'mobile_verification']);
             $table->timestamps();
-
         });
     }
 

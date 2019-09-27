@@ -24,10 +24,10 @@ class DeviceController extends Controller
         ->response();
     }
 
-    public function revokedDeviceUser(Request $request, $user_id) {
-
+    public function revokedDeviceUser(Request $request, $user_id)
+    {
         $user_device  = $request->device()->users()->where('users.id', $user_id)->first();
-        if($user_device) {
+        if ($user_device) {
             $request->device()->users()->syncWithoutDetaching([$user_id => ['active' => 'No', 'revoked' => '1']]);
         }
         return $this->setMessage('User Has been revoked.')->response();
@@ -37,13 +37,14 @@ class DeviceController extends Controller
      * @param Illuminate\Http\Request
      * @return \Illuminate\Http\Response
      */
-    public function deviceLoginUser(Request $request) {
+    public function deviceLoginUser(Request $request)
+    {
         $users = $request->device()->users()
             ->where('device_user.revoked', '0')
-            ->with(['role'=>function($q){
-                $q->select('id','landing_portal', 'title');
+            ->with(['role'=>function ($q) {
+                $q->select('id', 'landing_portal', 'title');
             }])
-        ->select(['users.id', 'users.name', 'role_id'])->get()->map(function($q) {
+        ->select(['users.id', 'users.name', 'role_id'])->get()->map(function ($q) {
             return $q->setHidden(['role_id']);
         });
 

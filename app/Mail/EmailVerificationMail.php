@@ -19,7 +19,7 @@ class EmailVerificationMail extends Mailable
      *
      * @return void
      */
-    public function __construct(Array $data)
+    public function __construct(array $data)
     {
         //
         $this->data = $data;

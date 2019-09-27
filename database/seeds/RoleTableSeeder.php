@@ -13,18 +13,22 @@ class RoleTableSeeder extends Seeder
     public function run()
     {
         //
-        Role::firstOrCreate(['name' => 'super_admin'],
-        [
+        Role::firstOrCreate(
+            ['name' => 'super_admin'],
+            [
             'title' => 'Super Admin',
             'choosable' => 'Y',
             'landing_page'=>'admin/dashboard'
-        ]);
+        ]
+        );
 
-        Role::firstOrCreate(['name' => 'visitor'],
-        [
+        Role::firstOrCreate(
+            ['name' => 'visitor'],
+            [
             'title' => 'Visitor',
             'choosable' => 'Y',
             'landing_page'=>'/'
-        ]);
+        ]
+        );
     }
 }

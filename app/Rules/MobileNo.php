@@ -6,7 +6,6 @@ use Illuminate\Contracts\Validation\Rule;
 
 class MobileNo implements Rule
 {
-
     public static $rule = '/^\+([0-9]){1,4}(\-)([0-9]){6,12}$/';
 
     /**
@@ -28,12 +27,11 @@ class MobileNo implements Rule
      */
     public function passes($attribute, $value)
     {
-        if(trim($value)) {
+        if (trim($value)) {
             return (preg_match(self::$rule, $value) === 1);
         }
 
         return true;
-
     }
 
     /**

@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         //
-        foreach(range(1, 10) as $no) {
+        foreach (range(1, 10) as $no) {
             factory(App\Models\User::class)->create();
         }
     }

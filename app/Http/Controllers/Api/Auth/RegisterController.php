@@ -17,8 +17,8 @@ class RegisterController extends Controller
      * @param Illuminate\Http\Request
      * @param Illuminate\Http\Response
      */
-    public function index(Request $request) {
-
+    public function index(Request $request)
+    {
         $this->validate($request, [
             'name' => 'required|max:255',
             'email' => ['required', 'email', 'max:255', new UniqueAttributeWithTrashed(null, User::class)],

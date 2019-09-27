@@ -49,19 +49,23 @@ class User extends Authenticatable
     /**
      * To get the user role information
      */
-    public function role() {
+    public function role()
+    {
         return $this->belongsTo(Role::class);
     }
 
-    public  function devices() {
+    public function devices()
+    {
         return $this->belongsToMany(Device::class)->withPivot([
             'settings', 'login_index', 'active'
         ])->using(Relations\DevicePivot::class);
     }
-    public function profileImage() {
+    public function profileImage()
+    {
         return $this->morphOneMedia(\Config::get('lq.media_model_instance'), 'mediable', 'image', __FUNCTION__);
     }
-    public function photos() {
+    public function photos()
+    {
         return $this->morphManyMedia(\Config::get('lq.media_model_instance'), 'mediable', 'user_photos', __FUNCTION__);
     }
 }

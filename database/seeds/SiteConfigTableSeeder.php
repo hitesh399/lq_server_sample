@@ -15,7 +15,7 @@ class SiteConfigTableSeeder extends Seeder
         //
         $model = config('lq.site_config_class');
 
-        $model::updateOrCreate(['name' => 'MAIL_DRIVER'],[
+        $model::updateOrCreate(['name' => 'MAIL_DRIVER'], [
             'name' => 'MAIL_DRIVER',
             'data' => 'smtp',
             'config_group' => 'Email Configurations',
@@ -27,7 +27,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_HOST'],[
+        $model::updateOrCreate(['name' => 'MAIL_HOST'], [
             'name' => 'MAIL_HOST',
             'data' => 'smtp.gmail.com',
             'config_group' => 'Email Configurations',
@@ -36,7 +36,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_PORT'],[
+        $model::updateOrCreate(['name' => 'MAIL_PORT'], [
             'name' => 'MAIL_PORT',
             'data' => 587,
             'config_group' => 'Email Configurations',
@@ -45,7 +45,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_FROM_ADDRESS'],[
+        $model::updateOrCreate(['name' => 'MAIL_FROM_ADDRESS'], [
             'name' => 'MAIL_FROM_ADDRESS',
             'data' => 'developerrupeshranjan@gmail.com',
             'config_group' => 'Email Configurations',
@@ -54,7 +54,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_FROM_NAME'],[
+        $model::updateOrCreate(['name' => 'MAIL_FROM_NAME'], [
             'name' => 'MAIL_FROM_NAME',
             'data' => 'Example',
             'config_group' => 'Email Configurations',
@@ -63,7 +63,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_ENCRYPTION'],[
+        $model::updateOrCreate(['name' => 'MAIL_ENCRYPTION'], [
             'name' => 'MAIL_ENCRYPTION',
             'data' => 'tls',
             'config_group' => 'Email Configurations',
@@ -72,7 +72,7 @@ class SiteConfigTableSeeder extends Seeder
             ]
         ]);
 
-        $model::updateOrCreate(['name' => 'MAIL_USERNAME'],[
+        $model::updateOrCreate(['name' => 'MAIL_USERNAME'], [
             'name' => 'MAIL_USERNAME',
             'data' => 'developerrupeshranjan@gmail.com',
             'config_group' => 'Email Configurations',

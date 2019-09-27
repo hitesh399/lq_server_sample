@@ -15,11 +15,11 @@ class UserVerification extends Model
         'user_id', 'email', 'mobile_no', 'token', 'purpose'
     ];
 
-     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
+    /**
+    * The attributes that should be cast to native types.
+    *
+    * @var array
+    */
     protected $casts = [
         'email' => 'string',
         'user_id' => 'int',

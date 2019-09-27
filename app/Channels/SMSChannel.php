@@ -17,12 +17,9 @@ class SMSChannel
     public function send($notifiable, Notification $notification)
     {
         try {
-
             $sms = $notification->toSms($notifiable);
             $sms->send();
-        }
-        catch(\Exception $e) {
-
+        } catch (\Exception $e) {
             \Log::info('SMS'. $e->getMessage());
         }
     }

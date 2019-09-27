@@ -6,7 +6,6 @@ use Illuminate\Contracts\Validation\Rule;
 
 class UserName implements Rule
 {
-
     public static $rule = '/(^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.
     [0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,})$)|(^\+([0-9]){1,4}(\-)([0-9]){6,12})$)/';
 
@@ -31,13 +30,11 @@ class UserName implements Rule
     {
         //
 
-        if(trim($value)) {
-
+        if (trim($value)) {
             return (preg_match(self::$rule, $value) === 1);
         }
 
         return true;
-
     }
 
     /**

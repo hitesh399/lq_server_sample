@@ -4,8 +4,8 @@ namespace App\Services;
 
 use Singsys\LQ\Lib\Concerns\NotificationTemplate;
 
-class Sms {
-
+class Sms
+{
     use NotificationTemplate;
 
     protected $twilioSms;
@@ -13,11 +13,12 @@ class Sms {
     protected $token = '212323';
     protected $fromNumber = '212323';
 
-    protected $template_name = NULL;
-    protected $mobile_no = NULL;
+    protected $template_name = null;
+    protected $mobile_no = null;
     protected $data = [];
 
-    public function __construct($mobile_no, $template_name, $data) {
+    public function __construct($mobile_no, $template_name, $data)
+    {
 
         /**
          * Set the Twilio credentials
@@ -35,8 +36,8 @@ class Sms {
     /**
      * To send the sms.
      */
-    public function send() {
-
+    public function send()
+    {
         $sms_text = $this->getTemaplate($this->template_name, $this->data);
         return $this->twilioSms->message($this->mobile_no, $sms_text['body']);
     }
