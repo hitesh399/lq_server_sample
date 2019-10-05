@@ -12,19 +12,19 @@ class UserVerification extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'email', 'mobile_no', 'token', 'purpose'
+        'user_id', 'email', 'mobile_no', 'token', 'for'
     ];
 
-    /**
-    * The attributes that should be cast to native types.
-    *
-    * @var array
-    */
+     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
     protected $casts = [
         'email' => 'string',
         'user_id' => 'int',
         'mobile_no' => 'string',
         'token' => 'string',
-        'purpose' => 'string',
+        'for' => 'string',
     ];
 }

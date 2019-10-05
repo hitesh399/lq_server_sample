@@ -1,0 +1,1502 @@
+[
+  {
+    "name": "Afghanistan",
+    "code": "+93",
+    "flag": "https:\/\/restcountries.eu\/data\/afg.svg",
+    "country_code": "AF"
+  },
+  {
+    "name": "\u00c5land Islands",
+    "code": "+358",
+    "flag": "https:\/\/restcountries.eu\/data\/ala.svg",
+    "country_code": "AX"
+  },
+  {
+    "name": "Albania",
+    "code": "+355",
+    "flag": "https:\/\/restcountries.eu\/data\/alb.svg",
+    "country_code": "AL"
+  },
+  {
+    "name": "Algeria",
+    "code": "+213",
+    "flag": "https:\/\/restcountries.eu\/data\/dza.svg",
+    "country_code": "DZ"
+  },
+  {
+    "name": "American Samoa",
+    "code": "+1684",
+    "flag": "https:\/\/restcountries.eu\/data\/asm.svg",
+    "country_code": "AS"
+  },
+  {
+    "name": "Andorra",
+    "code": "+376",
+    "flag": "https:\/\/restcountries.eu\/data\/and.svg",
+    "country_code": "AD"
+  },
+  {
+    "name": "Angola",
+    "code": "+244",
+    "flag": "https:\/\/restcountries.eu\/data\/ago.svg",
+    "country_code": "AO"
+  },
+  {
+    "name": "Anguilla",
+    "code": "+1264",
+    "flag": "https:\/\/restcountries.eu\/data\/aia.svg",
+    "country_code": "AI"
+  },
+  {
+    "name": "Antarctica",
+    "code": "+672",
+    "flag": "https:\/\/restcountries.eu\/data\/ata.svg",
+    "country_code": "AQ"
+  },
+  {
+    "name": "Antigua and Barbuda",
+    "code": "+1268",
+    "flag": "https:\/\/restcountries.eu\/data\/atg.svg",
+    "country_code": "AG"
+  },
+  {
+    "name": "Argentina",
+    "code": "+54",
+    "flag": "https:\/\/restcountries.eu\/data\/arg.svg",
+    "country_code": "AR"
+  },
+  {
+    "name": "Armenia",
+    "code": "+374",
+    "flag": "https:\/\/restcountries.eu\/data\/arm.svg",
+    "country_code": "AM"
+  },
+  {
+    "name": "Aruba",
+    "code": "+297",
+    "flag": "https:\/\/restcountries.eu\/data\/abw.svg",
+    "country_code": "AW"
+  },
+  {
+    "name": "Australia",
+    "code": "+61",
+    "flag": "https:\/\/restcountries.eu\/data\/aus.svg",
+    "country_code": "AU"
+  },
+  {
+    "name": "Austria",
+    "code": "+43",
+    "flag": "https:\/\/restcountries.eu\/data\/aut.svg",
+    "country_code": "AT"
+  },
+  {
+    "name": "Azerbaijan",
+    "code": "+994",
+    "flag": "https:\/\/restcountries.eu\/data\/aze.svg",
+    "country_code": "AZ"
+  },
+  {
+    "name": "Bahamas",
+    "code": "+1242",
+    "flag": "https:\/\/restcountries.eu\/data\/bhs.svg",
+    "country_code": "BS"
+  },
+  {
+    "name": "Bahrain",
+    "code": "+973",
+    "flag": "https:\/\/restcountries.eu\/data\/bhr.svg",
+    "country_code": "BH"
+  },
+  {
+    "name": "Bangladesh",
+    "code": "+880",
+    "flag": "https:\/\/restcountries.eu\/data\/bgd.svg",
+    "country_code": "BD"
+  },
+  {
+    "name": "Barbados",
+    "code": "+1246",
+    "flag": "https:\/\/restcountries.eu\/data\/brb.svg",
+    "country_code": "BB"
+  },
+  {
+    "name": "Belarus",
+    "code": "+375",
+    "flag": "https:\/\/restcountries.eu\/data\/blr.svg",
+    "country_code": "BY"
+  },
+  {
+    "name": "Belgium",
+    "code": "+32",
+    "flag": "https:\/\/restcountries.eu\/data\/bel.svg",
+    "country_code": "BE"
+  },
+  {
+    "name": "Belize",
+    "code": "+501",
+    "flag": "https:\/\/restcountries.eu\/data\/blz.svg",
+    "country_code": "BZ"
+  },
+  {
+    "name": "Benin",
+    "code": "+229",
+    "flag": "https:\/\/restcountries.eu\/data\/ben.svg",
+    "country_code": "BJ"
+  },
+  {
+    "name": "Bermuda",
+    "code": "+1441",
+    "flag": "https:\/\/restcountries.eu\/data\/bmu.svg",
+    "country_code": "BM"
+  },
+  {
+    "name": "Bhutan",
+    "code": "+975",
+    "flag": "https:\/\/restcountries.eu\/data\/btn.svg",
+    "country_code": "BT"
+  },
+  {
+    "name": "Bolivia (Plurinational State of)",
+    "code": "+591",
+    "flag": "https:\/\/restcountries.eu\/data\/bol.svg",
+    "country_code": "BO"
+  },
+  {
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "code": "+5997",
+    "flag": "https:\/\/restcountries.eu\/data\/bes.svg",
+    "country_code": "BQ"
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "code": "+387",
+    "flag": "https:\/\/restcountries.eu\/data\/bih.svg",
+    "country_code": "BA"
+  },
+  {
+    "name": "Botswana",
+    "code": "+267",
+    "flag": "https:\/\/restcountries.eu\/data\/bwa.svg",
+    "country_code": "BW"
+  },
+  {
+    "name": "Bouvet Island",
+    "code": "+",
+    "flag": "https:\/\/restcountries.eu\/data\/bvt.svg",
+    "country_code": "BV"
+  },
+  {
+    "name": "Brazil",
+    "code": "+55",
+    "flag": "https:\/\/restcountries.eu\/data\/bra.svg",
+    "country_code": "BR"
+  },
+  {
+    "name": "British Indian Ocean Territory",
+    "code": "+246",
+    "flag": "https:\/\/restcountries.eu\/data\/iot.svg",
+    "country_code": "IO"
+  },
+  {
+    "name": "United States Minor Outlying Islands",
+    "code": "+",
+    "flag": "https:\/\/restcountries.eu\/data\/umi.svg",
+    "country_code": "UM"
+  },
+  {
+    "name": "Virgin Islands (British)",
+    "code": "+1284",
+    "flag": "https:\/\/restcountries.eu\/data\/vgb.svg",
+    "country_code": "VG"
+  },
+  {
+    "name": "Virgin Islands (U.S.)",
+    "code": "+1 340",
+    "flag": "https:\/\/restcountries.eu\/data\/vir.svg",
+    "country_code": "VI"
+  },
+  {
+    "name": "Brunei Darussalam",
+    "code": "+673",
+    "flag": "https:\/\/restcountries.eu\/data\/brn.svg",
+    "country_code": "BN"
+  },
+  {
+    "name": "Bulgaria",
+    "code": "+359",
+    "flag": "https:\/\/restcountries.eu\/data\/bgr.svg",
+    "country_code": "BG"
+  },
+  {
+    "name": "Burkina Faso",
+    "code": "+226",
+    "flag": "https:\/\/restcountries.eu\/data\/bfa.svg",
+    "country_code": "BF"
+  },
+  {
+    "name": "Burundi",
+    "code": "+257",
+    "flag": "https:\/\/restcountries.eu\/data\/bdi.svg",
+    "country_code": "BI"
+  },
+  {
+    "name": "Cambodia",
+    "code": "+855",
+    "flag": "https:\/\/restcountries.eu\/data\/khm.svg",
+    "country_code": "KH"
+  },
+  {
+    "name": "Cameroon",
+    "code": "+237",
+    "flag": "https:\/\/restcountries.eu\/data\/cmr.svg",
+    "country_code": "CM"
+  },
+  {
+    "name": "Canada",
+    "code": "+1",
+    "flag": "https:\/\/restcountries.eu\/data\/can.svg",
+    "country_code": "CA"
+  },
+  {
+    "name": "Cabo Verde",
+    "code": "+238",
+    "flag": "https:\/\/restcountries.eu\/data\/cpv.svg",
+    "country_code": "CV"
+  },
+  {
+    "name": "Cayman Islands",
+    "code": "+1345",
+    "flag": "https:\/\/restcountries.eu\/data\/cym.svg",
+    "country_code": "KY"
+  },
+  {
+    "name": "Central African Republic",
+    "code": "+236",
+    "flag": "https:\/\/restcountries.eu\/data\/caf.svg",
+    "country_code": "CF"
+  },
+  {
+    "name": "Chad",
+    "code": "+235",
+    "flag": "https:\/\/restcountries.eu\/data\/tcd.svg",
+    "country_code": "TD"
+  },
+  {
+    "name": "Chile",
+    "code": "+56",
+    "flag": "https:\/\/restcountries.eu\/data\/chl.svg",
+    "country_code": "CL"
+  },
+  {
+    "name": "China",
+    "code": "+86",
+    "flag": "https:\/\/restcountries.eu\/data\/chn.svg",
+    "country_code": "CN"
+  },
+  {
+    "name": "Christmas Island",
+    "code": "+61",
+    "flag": "https:\/\/restcountries.eu\/data\/cxr.svg",
+    "country_code": "CX"
+  },
+  {
+    "name": "Cocos (Keeling) Islands",
+    "code": "+61",
+    "flag": "https:\/\/restcountries.eu\/data\/cck.svg",
+    "country_code": "CC"
+  },
+  {
+    "name": "Colombia",
+    "code": "+57",
+    "flag": "https:\/\/restcountries.eu\/data\/col.svg",
+    "country_code": "CO"
+  },
+  {
+    "name": "Comoros",
+    "code": "+269",
+    "flag": "https:\/\/restcountries.eu\/data\/com.svg",
+    "country_code": "KM"
+  },
+  {
+    "name": "Congo",
+    "code": "+242",
+    "flag": "https:\/\/restcountries.eu\/data\/cog.svg",
+    "country_code": "CG"
+  },
+  {
+    "name": "Congo (Democratic Republic of the)",
+    "code": "+243",
+    "flag": "https:\/\/restcountries.eu\/data\/cod.svg",
+    "country_code": "CD"
+  },
+  {
+    "name": "Cook Islands",
+    "code": "+682",
+    "flag": "https:\/\/restcountries.eu\/data\/cok.svg",
+    "country_code": "CK"
+  },
+  {
+    "name": "Costa Rica",
+    "code": "+506",
+    "flag": "https:\/\/restcountries.eu\/data\/cri.svg",
+    "country_code": "CR"
+  },
+  {
+    "name": "Croatia",
+    "code": "+385",
+    "flag": "https:\/\/restcountries.eu\/data\/hrv.svg",
+    "country_code": "HR"
+  },
+  {
+    "name": "Cuba",
+    "code": "+53",
+    "flag": "https:\/\/restcountries.eu\/data\/cub.svg",
+    "country_code": "CU"
+  },
+  {
+    "name": "Cura\u00e7ao",
+    "code": "+599",
+    "flag": "https:\/\/restcountries.eu\/data\/cuw.svg",
+    "country_code": "CW"
+  },
+  {
+    "name": "Cyprus",
+    "code": "+357",
+    "flag": "https:\/\/restcountries.eu\/data\/cyp.svg",
+    "country_code": "CY"
+  },
+  {
+    "name": "Czech Republic",
+    "code": "+420",
+    "flag": "https:\/\/restcountries.eu\/data\/cze.svg",
+    "country_code": "CZ"
+  },
+  {
+    "name": "Denmark",
+    "code": "+45",
+    "flag": "https:\/\/restcountries.eu\/data\/dnk.svg",
+    "country_code": "DK"
+  },
+  {
+    "name": "Djibouti",
+    "code": "+253",
+    "flag": "https:\/\/restcountries.eu\/data\/dji.svg",
+    "country_code": "DJ"
+  },
+  {
+    "name": "Dominica",
+    "code": "+1767",
+    "flag": "https:\/\/restcountries.eu\/data\/dma.svg",
+    "country_code": "DM"
+  },
+  {
+    "name": "Dominican Republic",
+    "code": "+1809",
+    "flag": "https:\/\/restcountries.eu\/data\/dom.svg",
+    "country_code": "DO"
+  },
+  {
+    "name": "Ecuador",
+    "code": "+593",
+    "flag": "https:\/\/restcountries.eu\/data\/ecu.svg",
+    "country_code": "EC"
+  },
+  {
+    "name": "Egypt",
+    "code": "+20",
+    "flag": "https:\/\/restcountries.eu\/data\/egy.svg",
+    "country_code": "EG"
+  },
+  {
+    "name": "El Salvador",
+    "code": "+503",
+    "flag": "https:\/\/restcountries.eu\/data\/slv.svg",
+    "country_code": "SV"
+  },
+  {
+    "name": "Equatorial Guinea",
+    "code": "+240",
+    "flag": "https:\/\/restcountries.eu\/data\/gnq.svg",
+    "country_code": "GQ"
+  },
+  {
+    "name": "Eritrea",
+    "code": "+291",
+    "flag": "https:\/\/restcountries.eu\/data\/eri.svg",
+    "country_code": "ER"
+  },
+  {
+    "name": "Estonia",
+    "code": "+372",
+    "flag": "https:\/\/restcountries.eu\/data\/est.svg",
+    "country_code": "EE"
+  },
+  {
+    "name": "Ethiopia",
+    "code": "+251",
+    "flag": "https:\/\/restcountries.eu\/data\/eth.svg",
+    "country_code": "ET"
+  },
+  {
+    "name": "Falkland Islands (Malvinas)",
+    "code": "+500",
+    "flag": "https:\/\/restcountries.eu\/data\/flk.svg",
+    "country_code": "FK"
+  },
+  {
+    "name": "Faroe Islands",
+    "code": "+298",
+    "flag": "https:\/\/restcountries.eu\/data\/fro.svg",
+    "country_code": "FO"
+  },
+  {
+    "name": "Fiji",
+    "code": "+679",
+    "flag": "https:\/\/restcountries.eu\/data\/fji.svg",
+    "country_code": "FJ"
+  },
+  {
+    "name": "Finland",
+    "code": "+358",
+    "flag": "https:\/\/restcountries.eu\/data\/fin.svg",
+    "country_code": "FI"
+  },
+  {
+    "name": "France",
+    "code": "+33",
+    "flag": "https:\/\/restcountries.eu\/data\/fra.svg",
+    "country_code": "FR"
+  },
+  {
+    "name": "French Guiana",
+    "code": "+594",
+    "flag": "https:\/\/restcountries.eu\/data\/guf.svg",
+    "country_code": "GF"
+  },
+  {
+    "name": "French Polynesia",
+    "code": "+689",
+    "flag": "https:\/\/restcountries.eu\/data\/pyf.svg",
+    "country_code": "PF"
+  },
+  {
+    "name": "French Southern Territories",
+    "code": "+",
+    "flag": "https:\/\/restcountries.eu\/data\/atf.svg",
+    "country_code": "TF"
+  },
+  {
+    "name": "Gabon",
+    "code": "+241",
+    "flag": "https:\/\/restcountries.eu\/data\/gab.svg",
+    "country_code": "GA"
+  },
+  {
+    "name": "Gambia",
+    "code": "+220",
+    "flag": "https:\/\/restcountries.eu\/data\/gmb.svg",
+    "country_code": "GM"
+  },
+  {
+    "name": "Georgia",
+    "code": "+995",
+    "flag": "https:\/\/restcountries.eu\/data\/geo.svg",
+    "country_code": "GE"
+  },
+  {
+    "name": "Germany",
+    "code": "+49",
+    "flag": "https:\/\/restcountries.eu\/data\/deu.svg",
+    "country_code": "DE"
+  },
+  {
+    "name": "Ghana",
+    "code": "+233",
+    "flag": "https:\/\/restcountries.eu\/data\/gha.svg",
+    "country_code": "GH"
+  },
+  {
+    "name": "Gibraltar",
+    "code": "+350",
+    "flag": "https:\/\/restcountries.eu\/data\/gib.svg",
+    "country_code": "GI"
+  },
+  {
+    "name": "Greece",
+    "code": "+30",
+    "flag": "https:\/\/restcountries.eu\/data\/grc.svg",
+    "country_code": "GR"
+  },
+  {
+    "name": "Greenland",
+    "code": "+299",
+    "flag": "https:\/\/restcountries.eu\/data\/grl.svg",
+    "country_code": "GL"
+  },
+  {
+    "name": "Grenada",
+    "code": "+1473",
+    "flag": "https:\/\/restcountries.eu\/data\/grd.svg",
+    "country_code": "GD"
+  },
+  {
+    "name": "Guadeloupe",
+    "code": "+590",
+    "flag": "https:\/\/restcountries.eu\/data\/glp.svg",
+    "country_code": "GP"
+  },
+  {
+    "name": "Guam",
+    "code": "+1671",
+    "flag": "https:\/\/restcountries.eu\/data\/gum.svg",
+    "country_code": "GU"
+  },
+  {
+    "name": "Guatemala",
+    "code": "+502",
+    "flag": "https:\/\/restcountries.eu\/data\/gtm.svg",
+    "country_code": "GT"
+  },
+  {
+    "name": "Guernsey",
+    "code": "+44",
+    "flag": "https:\/\/restcountries.eu\/data\/ggy.svg",
+    "country_code": "GG"
+  },
+  {
+    "name": "Guinea",
+    "code": "+224",
+    "flag": "https:\/\/restcountries.eu\/data\/gin.svg",
+    "country_code": "GN"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "code": "+245",
+    "flag": "https:\/\/restcountries.eu\/data\/gnb.svg",
+    "country_code": "GW"
+  },
+  {
+    "name": "Guyana",
+    "code": "+592",
+    "flag": "https:\/\/restcountries.eu\/data\/guy.svg",
+    "country_code": "GY"
+  },
+  {
+    "name": "Haiti",
+    "code": "+509",
+    "flag": "https:\/\/restcountries.eu\/data\/hti.svg",
+    "country_code": "HT"
+  },
+  {
+    "name": "Heard Island and McDonald Islands",
+    "code": "+",
+    "flag": "https:\/\/restcountries.eu\/data\/hmd.svg",
+    "country_code": "HM"
+  },
+  {
+    "name": "Holy See",
+    "code": "+379",
+    "flag": "https:\/\/restcountries.eu\/data\/vat.svg",
+    "country_code": "VA"
+  },
+  {
+    "name": "Honduras",
+    "code": "+504",
+    "flag": "https:\/\/restcountries.eu\/data\/hnd.svg",
+    "country_code": "HN"
+  },
+  {
+    "name": "Hong Kong",
+    "code": "+852",
+    "flag": "https:\/\/restcountries.eu\/data\/hkg.svg",
+    "country_code": "HK"
+  },
+  {
+    "name": "Hungary",
+    "code": "+36",
+    "flag": "https:\/\/restcountries.eu\/data\/hun.svg",
+    "country_code": "HU"
+  },
+  {
+    "name": "Iceland",
+    "code": "+354",
+    "flag": "https:\/\/restcountries.eu\/data\/isl.svg",
+    "country_code": "IS"
+  },
+  {
+    "name": "India",
+    "code": "+91",
+    "flag": "https:\/\/restcountries.eu\/data\/ind.svg",
+    "country_code": "IN"
+  },
+  {
+    "name": "Indonesia",
+    "code": "+62",
+    "flag": "https:\/\/restcountries.eu\/data\/idn.svg",
+    "country_code": "ID"
+  },
+  {
+    "name": "C\u00f4te d'Ivoire",
+    "code": "+225",
+    "flag": "https:\/\/restcountries.eu\/data\/civ.svg",
+    "country_code": "CI"
+  },
+  {
+    "name": "Iran (Islamic Republic of)",
+    "code": "+98",
+    "flag": "https:\/\/restcountries.eu\/data\/irn.svg",
+    "country_code": "IR"
+  },
+  {
+    "name": "Iraq",
+    "code": "+964",
+    "flag": "https:\/\/restcountries.eu\/data\/irq.svg",
+    "country_code": "IQ"
+  },
+  {
+    "name": "Ireland",
+    "code": "+353",
+    "flag": "https:\/\/restcountries.eu\/data\/irl.svg",
+    "country_code": "IE"
+  },
+  {
+    "name": "Isle of Man",
+    "code": "+44",
+    "flag": "https:\/\/restcountries.eu\/data\/imn.svg",
+    "country_code": "IM"
+  },
+  {
+    "name": "Israel",
+    "code": "+972",
+    "flag": "https:\/\/restcountries.eu\/data\/isr.svg",
+    "country_code": "IL"
+  },
+  {
+    "name": "Italy",
+    "code": "+39",
+    "flag": "https:\/\/restcountries.eu\/data\/ita.svg",
+    "country_code": "IT"
+  },
+  {
+    "name": "Jamaica",
+    "code": "+1876",
+    "flag": "https:\/\/restcountries.eu\/data\/jam.svg",
+    "country_code": "JM"
+  },
+  {
+    "name": "Japan",
+    "code": "+81",
+    "flag": "https:\/\/restcountries.eu\/data\/jpn.svg",
+    "country_code": "JP"
+  },
+  {
+    "name": "Jersey",
+    "code": "+44",
+    "flag": "https:\/\/restcountries.eu\/data\/jey.svg",
+    "country_code": "JE"
+  },
+  {
+    "name": "Jordan",
+    "code": "+962",
+    "flag": "https:\/\/restcountries.eu\/data\/jor.svg",
+    "country_code": "JO"
+  },
+  {
+    "name": "Kazakhstan",
+    "code": "+76",
+    "flag": "https:\/\/restcountries.eu\/data\/kaz.svg",
+    "country_code": "KZ"
+  },
+  {
+    "name": "Kenya",
+    "code": "+254",
+    "flag": "https:\/\/restcountries.eu\/data\/ken.svg",
+    "country_code": "KE"
+  },
+  {
+    "name": "Kiribati",
+    "code": "+686",
+    "flag": "https:\/\/restcountries.eu\/data\/kir.svg",
+    "country_code": "KI"
+  },
+  {
+    "name": "Kuwait",
+    "code": "+965",
+    "flag": "https:\/\/restcountries.eu\/data\/kwt.svg",
+    "country_code": "KW"
+  },
+  {
+    "name": "Kyrgyzstan",
+    "code": "+996",
+    "flag": "https:\/\/restcountries.eu\/data\/kgz.svg",
+    "country_code": "KG"
+  },
+  {
+    "name": "Lao People's Democratic Republic",
+    "code": "+856",
+    "flag": "https:\/\/restcountries.eu\/data\/lao.svg",
+    "country_code": "LA"
+  },
+  {
+    "name": "Latvia",
+    "code": "+371",
+    "flag": "https:\/\/restcountries.eu\/data\/lva.svg",
+    "country_code": "LV"
+  },
+  {
+    "name": "Lebanon",
+    "code": "+961",
+    "flag": "https:\/\/restcountries.eu\/data\/lbn.svg",
+    "country_code": "LB"
+  },
+  {
+    "name": "Lesotho",
+    "code": "+266",
+    "flag": "https:\/\/restcountries.eu\/data\/lso.svg",
+    "country_code": "LS"
+  },
+  {
+    "name": "Liberia",
+    "code": "+231",
+    "flag": "https:\/\/restcountries.eu\/data\/lbr.svg",
+    "country_code": "LR"
+  },
+  {
+    "name": "Libya",
+    "code": "+218",
+    "flag": "https:\/\/restcountries.eu\/data\/lby.svg",
+    "country_code": "LY"
+  },
+  {
+    "name": "Liechtenstein",
+    "code": "+423",
+    "flag": "https:\/\/restcountries.eu\/data\/lie.svg",
+    "country_code": "LI"
+  },
+  {
+    "name": "Lithuania",
+    "code": "+370",
+    "flag": "https:\/\/restcountries.eu\/data\/ltu.svg",
+    "country_code": "LT"
+  },
+  {
+    "name": "Luxembourg",
+    "code": "+352",
+    "flag": "https:\/\/restcountries.eu\/data\/lux.svg",
+    "country_code": "LU"
+  },
+  {
+    "name": "Macao",
+    "code": "+853",
+    "flag": "https:\/\/restcountries.eu\/data\/mac.svg",
+    "country_code": "MO"
+  },
+  {
+    "name": "Macedonia (the former Yugoslav Republic of)",
+    "code": "+389",
+    "flag": "https:\/\/restcountries.eu\/data\/mkd.svg",
+    "country_code": "MK"
+  },
+  {
+    "name": "Madagascar",
+    "code": "+261",
+    "flag": "https:\/\/restcountries.eu\/data\/mdg.svg",
+    "country_code": "MG"
+  },
+  {
+    "name": "Malawi",
+    "code": "+265",
+    "flag": "https:\/\/restcountries.eu\/data\/mwi.svg",
+    "country_code": "MW"
+  },
+  {
+    "name": "Malaysia",
+    "code": "+60",
+    "flag": "https:\/\/restcountries.eu\/data\/mys.svg",
+    "country_code": "MY"
+  },
+  {
+    "name": "Maldives",
+    "code": "+960",
+    "flag": "https:\/\/restcountries.eu\/data\/mdv.svg",
+    "country_code": "MV"
+  },
+  {
+    "name": "Mali",
+    "code": "+223",
+    "flag": "https:\/\/restcountries.eu\/data\/mli.svg",
+    "country_code": "ML"
+  },
+  {
+    "name": "Malta",
+    "code": "+356",
+    "flag": "https:\/\/restcountries.eu\/data\/mlt.svg",
+    "country_code": "MT"
+  },
+  {
+    "name": "Marshall Islands",
+    "code": "+692",
+    "flag": "https:\/\/restcountries.eu\/data\/mhl.svg",
+    "country_code": "MH"
+  },
+  {
+    "name": "Martinique",
+    "code": "+596",
+    "flag": "https:\/\/restcountries.eu\/data\/mtq.svg",
+    "country_code": "MQ"
+  },
+  {
+    "name": "Mauritania",
+    "code": "+222",
+    "flag": "https:\/\/restcountries.eu\/data\/mrt.svg",
+    "country_code": "MR"
+  },
+  {
+    "name": "Mauritius",
+    "code": "+230",
+    "flag": "https:\/\/restcountries.eu\/data\/mus.svg",
+    "country_code": "MU"
+  },
+  {
+    "name": "Mayotte",
+    "code": "+262",
+    "flag": "https:\/\/restcountries.eu\/data\/myt.svg",
+    "country_code": "YT"
+  },
+  {
+    "name": "Mexico",
+    "code": "+52",
+    "flag": "https:\/\/restcountries.eu\/data\/mex.svg",
+    "country_code": "MX"
+  },
+  {
+    "name": "Micronesia (Federated States of)",
+    "code": "+691",
+    "flag": "https:\/\/restcountries.eu\/data\/fsm.svg",
+    "country_code": "FM"
+  },
+  {
+    "name": "Moldova (Republic of)",
+    "code": "+373",
+    "flag": "https:\/\/restcountries.eu\/data\/mda.svg",
+    "country_code": "MD"
+  },
+  {
+    "name": "Monaco",
+    "code": "+377",
+    "flag": "https:\/\/restcountries.eu\/data\/mco.svg",
+    "country_code": "MC"
+  },
+  {
+    "name": "Mongolia",
+    "code": "+976",
+    "flag": "https:\/\/restcountries.eu\/data\/mng.svg",
+    "country_code": "MN"
+  },
+  {
+    "name": "Montenegro",
+    "code": "+382",
+    "flag": "https:\/\/restcountries.eu\/data\/mne.svg",
+    "country_code": "ME"
+  },
+  {
+    "name": "Montserrat",
+    "code": "+1664",
+    "flag": "https:\/\/restcountries.eu\/data\/msr.svg",
+    "country_code": "MS"
+  },
+  {
+    "name": "Morocco",
+    "code": "+212",
+    "flag": "https:\/\/restcountries.eu\/data\/mar.svg",
+    "country_code": "MA"
+  },
+  {
+    "name": "Mozambique",
+    "code": "+258",
+    "flag": "https:\/\/restcountries.eu\/data\/moz.svg",
+    "country_code": "MZ"
+  },
+  {
+    "name": "Myanmar",
+    "code": "+95",
+    "flag": "https:\/\/restcountries.eu\/data\/mmr.svg",
+    "country_code": "MM"
+  },
+  {
+    "name": "Namibia",
+    "code": "+264",
+    "flag": "https:\/\/restcountries.eu\/data\/nam.svg",
+    "country_code": "NA"
+  },
+  {
+    "name": "Nauru",
+    "code": "+674",
+    "flag": "https:\/\/restcountries.eu\/data\/nru.svg",
+    "country_code": "NR"
+  },
+  {
+    "name": "Nepal",
+    "code": "+977",
+    "flag": "https:\/\/restcountries.eu\/data\/npl.svg",
+    "country_code": "NP"
+  },
+  {
+    "name": "Netherlands",
+    "code": "+31",
+    "flag": "https:\/\/restcountries.eu\/data\/nld.svg",
+    "country_code": "NL"
+  },
+  {
+    "name": "New Caledonia",
+    "code": "+687",
+    "flag": "https:\/\/restcountries.eu\/data\/ncl.svg",
+    "country_code": "NC"
+  },
+  {
+    "name": "New Zealand",
+    "code": "+64",
+    "flag": "https:\/\/restcountries.eu\/data\/nzl.svg",
+    "country_code": "NZ"
+  },
+  {
+    "name": "Nicaragua",
+    "code": "+505",
+    "flag": "https:\/\/restcountries.eu\/data\/nic.svg",
+    "country_code": "NI"
+  },
+  {
+    "name": "Niger",
+    "code": "+227",
+    "flag": "https:\/\/restcountries.eu\/data\/ner.svg",
+    "country_code": "NE"
+  },
+  {
+    "name": "Nigeria",
+    "code": "+234",
+    "flag": "https:\/\/restcountries.eu\/data\/nga.svg",
+    "country_code": "NG"
+  },
+  {
+    "name": "Niue",
+    "code": "+683",
+    "flag": "https:\/\/restcountries.eu\/data\/niu.svg",
+    "country_code": "NU"
+  },
+  {
+    "name": "Norfolk Island",
+    "code": "+672",
+    "flag": "https:\/\/restcountries.eu\/data\/nfk.svg",
+    "country_code": "NF"
+  },
+  {
+    "name": "Korea (Democratic People's Republic of)",
+    "code": "+850",
+    "flag": "https:\/\/restcountries.eu\/data\/prk.svg",
+    "country_code": "KP"
+  },
+  {
+    "name": "Northern Mariana Islands",
+    "code": "+1670",
+    "flag": "https:\/\/restcountries.eu\/data\/mnp.svg",
+    "country_code": "MP"
+  },
+  {
+    "name": "Norway",
+    "code": "+47",
+    "flag": "https:\/\/restcountries.eu\/data\/nor.svg",
+    "country_code": "NO"
+  },
+  {
+    "name": "Oman",
+    "code": "+968",
+    "flag": "https:\/\/restcountries.eu\/data\/omn.svg",
+    "country_code": "OM"
+  },
+  {
+    "name": "Pakistan",
+    "code": "+92",
+    "flag": "https:\/\/restcountries.eu\/data\/pak.svg",
+    "country_code": "PK"
+  },
+  {
+    "name": "Palau",
+    "code": "+680",
+    "flag": "https:\/\/restcountries.eu\/data\/plw.svg",
+    "country_code": "PW"
+  },
+  {
+    "name": "Palestine, State of",
+    "code": "+970",
+    "flag": "https:\/\/restcountries.eu\/data\/pse.svg",
+    "country_code": "PS"
+  },
+  {
+    "name": "Panama",
+    "code": "+507",
+    "flag": "https:\/\/restcountries.eu\/data\/pan.svg",
+    "country_code": "PA"
+  },
+  {
+    "name": "Papua New Guinea",
+    "code": "+675",
+    "flag": "https:\/\/restcountries.eu\/data\/png.svg",
+    "country_code": "PG"
+  },
+  {
+    "name": "Paraguay",
+    "code": "+595",
+    "flag": "https:\/\/restcountries.eu\/data\/pry.svg",
+    "country_code": "PY"
+  },
+  {
+    "name": "Peru",
+    "code": "+51",
+    "flag": "https:\/\/restcountries.eu\/data\/per.svg",
+    "country_code": "PE"
+  },
+  {
+    "name": "Philippines",
+    "code": "+63",
+    "flag": "https:\/\/restcountries.eu\/data\/phl.svg",
+    "country_code": "PH"
+  },
+  {
+    "name": "Pitcairn",
+    "code": "+64",
+    "flag": "https:\/\/restcountries.eu\/data\/pcn.svg",
+    "country_code": "PN"
+  },
+  {
+    "name": "Poland",
+    "code": "+48",
+    "flag": "https:\/\/restcountries.eu\/data\/pol.svg",
+    "country_code": "PL"
+  },
+  {
+    "name": "Portugal",
+    "code": "+351",
+    "flag": "https:\/\/restcountries.eu\/data\/prt.svg",
+    "country_code": "PT"
+  },
+  {
+    "name": "Puerto Rico",
+    "code": "+1787",
+    "flag": "https:\/\/restcountries.eu\/data\/pri.svg",
+    "country_code": "PR"
+  },
+  {
+    "name": "Qatar",
+    "code": "+974",
+    "flag": "https:\/\/restcountries.eu\/data\/qat.svg",
+    "country_code": "QA"
+  },
+  {
+    "name": "Republic of Kosovo",
+    "code": "+383",
+    "flag": "https:\/\/restcountries.eu\/data\/kos.svg",
+    "country_code": "XK"
+  },
+  {
+    "name": "R\u00e9union",
+    "code": "+262",
+    "flag": "https:\/\/restcountries.eu\/data\/reu.svg",
+    "country_code": "RE"
+  },
+  {
+    "name": "Romania",
+    "code": "+40",
+    "flag": "https:\/\/restcountries.eu\/data\/rou.svg",
+    "country_code": "RO"
+  },
+  {
+    "name": "Russian Federation",
+    "code": "+7",
+    "flag": "https:\/\/restcountries.eu\/data\/rus.svg",
+    "country_code": "RU"
+  },
+  {
+    "name": "Rwanda",
+    "code": "+250",
+    "flag": "https:\/\/restcountries.eu\/data\/rwa.svg",
+    "country_code": "RW"
+  },
+  {
+    "name": "Saint Barth\u00e9lemy",
+    "code": "+590",
+    "flag": "https:\/\/restcountries.eu\/data\/blm.svg",
+    "country_code": "BL"
+  },
+  {
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "code": "+290",
+    "flag": "https:\/\/restcountries.eu\/data\/shn.svg",
+    "country_code": "SH"
+  },
+  {
+    "name": "Saint Kitts and Nevis",
+    "code": "+1869",
+    "flag": "https:\/\/restcountries.eu\/data\/kna.svg",
+    "country_code": "KN"
+  },
+  {
+    "name": "Saint Lucia",
+    "code": "+1758",
+    "flag": "https:\/\/restcountries.eu\/data\/lca.svg",
+    "country_code": "LC"
+  },
+  {
+    "name": "Saint Martin (French part)",
+    "code": "+590",
+    "flag": "https:\/\/restcountries.eu\/data\/maf.svg",
+    "country_code": "MF"
+  },
+  {
+    "name": "Saint Pierre and Miquelon",
+    "code": "+508",
+    "flag": "https:\/\/restcountries.eu\/data\/spm.svg",
+    "country_code": "PM"
+  },
+  {
+    "name": "Saint Vincent and the Grenadines",
+    "code": "+1784",
+    "flag": "https:\/\/restcountries.eu\/data\/vct.svg",
+    "country_code": "VC"
+  },
+  {
+    "name": "Samoa",
+    "code": "+685",
+    "flag": "https:\/\/restcountries.eu\/data\/wsm.svg",
+    "country_code": "WS"
+  },
+  {
+    "name": "San Marino",
+    "code": "+378",
+    "flag": "https:\/\/restcountries.eu\/data\/smr.svg",
+    "country_code": "SM"
+  },
+  {
+    "name": "Sao Tome and Principe",
+    "code": "+239",
+    "flag": "https:\/\/restcountries.eu\/data\/stp.svg",
+    "country_code": "ST"
+  },
+  {
+    "name": "Saudi Arabia",
+    "code": "+966",
+    "flag": "https:\/\/restcountries.eu\/data\/sau.svg",
+    "country_code": "SA"
+  },
+  {
+    "name": "Senegal",
+    "code": "+221",
+    "flag": "https:\/\/restcountries.eu\/data\/sen.svg",
+    "country_code": "SN"
+  },
+  {
+    "name": "Serbia",
+    "code": "+381",
+    "flag": "https:\/\/restcountries.eu\/data\/srb.svg",
+    "country_code": "RS"
+  },
+  {
+    "name": "Seychelles",
+    "code": "+248",
+    "flag": "https:\/\/restcountries.eu\/data\/syc.svg",
+    "country_code": "SC"
+  },
+  {
+    "name": "Sierra Leone",
+    "code": "+232",
+    "flag": "https:\/\/restcountries.eu\/data\/sle.svg",
+    "country_code": "SL"
+  },
+  {
+    "name": "Singapore",
+    "code": "+65",
+    "flag": "https:\/\/restcountries.eu\/data\/sgp.svg",
+    "country_code": "SG"
+  },
+  {
+    "name": "Sint Maarten (Dutch part)",
+    "code": "+1721",
+    "flag": "https:\/\/restcountries.eu\/data\/sxm.svg",
+    "country_code": "SX"
+  },
+  {
+    "name": "Slovakia",
+    "code": "+421",
+    "flag": "https:\/\/restcountries.eu\/data\/svk.svg",
+    "country_code": "SK"
+  },
+  {
+    "name": "Slovenia",
+    "code": "+386",
+    "flag": "https:\/\/restcountries.eu\/data\/svn.svg",
+    "country_code": "SI"
+  },
+  {
+    "name": "Solomon Islands",
+    "code": "+677",
+    "flag": "https:\/\/restcountries.eu\/data\/slb.svg",
+    "country_code": "SB"
+  },
+  {
+    "name": "Somalia",
+    "code": "+252",
+    "flag": "https:\/\/restcountries.eu\/data\/som.svg",
+    "country_code": "SO"
+  },
+  {
+    "name": "South Africa",
+    "code": "+27",
+    "flag": "https:\/\/restcountries.eu\/data\/zaf.svg",
+    "country_code": "ZA"
+  },
+  {
+    "name": "South Georgia and the South Sandwich Islands",
+    "code": "+500",
+    "flag": "https:\/\/restcountries.eu\/data\/sgs.svg",
+    "country_code": "GS"
+  },
+  {
+    "name": "Korea (Republic of)",
+    "code": "+82",
+    "flag": "https:\/\/restcountries.eu\/data\/kor.svg",
+    "country_code": "KR"
+  },
+  {
+    "name": "South Sudan",
+    "code": "+211",
+    "flag": "https:\/\/restcountries.eu\/data\/ssd.svg",
+    "country_code": "SS"
+  },
+  {
+    "name": "Spain",
+    "code": "+34",
+    "flag": "https:\/\/restcountries.eu\/data\/esp.svg",
+    "country_code": "ES"
+  },
+  {
+    "name": "Sri Lanka",
+    "code": "+94",
+    "flag": "https:\/\/restcountries.eu\/data\/lka.svg",
+    "country_code": "LK"
+  },
+  {
+    "name": "Sudan",
+    "code": "+249",
+    "flag": "https:\/\/restcountries.eu\/data\/sdn.svg",
+    "country_code": "SD"
+  },
+  {
+    "name": "Suriname",
+    "code": "+597",
+    "flag": "https:\/\/restcountries.eu\/data\/sur.svg",
+    "country_code": "SR"
+  },
+  {
+    "name": "Svalbard and Jan Mayen",
+    "code": "+4779",
+    "flag": "https:\/\/restcountries.eu\/data\/sjm.svg",
+    "country_code": "SJ"
+  },
+  {
+    "name": "Swaziland",
+    "code": "+268",
+    "flag": "https:\/\/restcountries.eu\/data\/swz.svg",
+    "country_code": "SZ"
+  },
+  {
+    "name": "Sweden",
+    "code": "+46",
+    "flag": "https:\/\/restcountries.eu\/data\/swe.svg",
+    "country_code": "SE"
+  },
+  {
+    "name": "Switzerland",
+    "code": "+41",
+    "flag": "https:\/\/restcountries.eu\/data\/che.svg",
+    "country_code": "CH"
+  },
+  {
+    "name": "Syrian Arab Republic",
+    "code": "+963",
+    "flag": "https:\/\/restcountries.eu\/data\/syr.svg",
+    "country_code": "SY"
+  },
+  {
+    "name": "Taiwan",
+    "code": "+886",
+    "flag": "https:\/\/restcountries.eu\/data\/twn.svg",
+    "country_code": "TW"
+  },
+  {
+    "name": "Tajikistan",
+    "code": "+992",
+    "flag": "https:\/\/restcountries.eu\/data\/tjk.svg",
+    "country_code": "TJ"
+  },
+  {
+    "name": "Tanzania, United Republic of",
+    "code": "+255",
+    "flag": "https:\/\/restcountries.eu\/data\/tza.svg",
+    "country_code": "TZ"
+  },
+  {
+    "name": "Thailand",
+    "code": "+66",
+    "flag": "https:\/\/restcountries.eu\/data\/tha.svg",
+    "country_code": "TH"
+  },
+  {
+    "name": "Timor-Leste",
+    "code": "+670",
+    "flag": "https:\/\/restcountries.eu\/data\/tls.svg",
+    "country_code": "TL"
+  },
+  {
+    "name": "Togo",
+    "code": "+228",
+    "flag": "https:\/\/restcountries.eu\/data\/tgo.svg",
+    "country_code": "TG"
+  },
+  {
+    "name": "Tokelau",
+    "code": "+690",
+    "flag": "https:\/\/restcountries.eu\/data\/tkl.svg",
+    "country_code": "TK"
+  },
+  {
+    "name": "Tonga",
+    "code": "+676",
+    "flag": "https:\/\/restcountries.eu\/data\/ton.svg",
+    "country_code": "TO"
+  },
+  {
+    "name": "Trinidad and Tobago",
+    "code": "+1868",
+    "flag": "https:\/\/restcountries.eu\/data\/tto.svg",
+    "country_code": "TT"
+  },
+  {
+    "name": "Tunisia",
+    "code": "+216",
+    "flag": "https:\/\/restcountries.eu\/data\/tun.svg",
+    "country_code": "TN"
+  },
+  {
+    "name": "Turkey",
+    "code": "+90",
+    "flag": "https:\/\/restcountries.eu\/data\/tur.svg",
+    "country_code": "TR"
+  },
+  {
+    "name": "Turkmenistan",
+    "code": "+993",
+    "flag": "https:\/\/restcountries.eu\/data\/tkm.svg",
+    "country_code": "TM"
+  },
+  {
+    "name": "Turks and Caicos Islands",
+    "code": "+1649",
+    "flag": "https:\/\/restcountries.eu\/data\/tca.svg",
+    "country_code": "TC"
+  },
+  {
+    "name": "Tuvalu",
+    "code": "+688",
+    "flag": "https:\/\/restcountries.eu\/data\/tuv.svg",
+    "country_code": "TV"
+  },
+  {
+    "name": "Uganda",
+    "code": "+256",
+    "flag": "https:\/\/restcountries.eu\/data\/uga.svg",
+    "country_code": "UG"
+  },
+  {
+    "name": "Ukraine",
+    "code": "+380",
+    "flag": "https:\/\/restcountries.eu\/data\/ukr.svg",
+    "country_code": "UA"
+  },
+  {
+    "name": "United Arab Emirates",
+    "code": "+971",
+    "flag": "https:\/\/restcountries.eu\/data\/are.svg",
+    "country_code": "AE"
+  },
+  {
+    "name": "United Kingdom of Great Britain and Northern Ireland",
+    "code": "+44",
+    "flag": "https:\/\/restcountries.eu\/data\/gbr.svg",
+    "country_code": "GB"
+  },
+  {
+    "name": "United States of America",
+    "code": "+1",
+    "flag": "https:\/\/restcountries.eu\/data\/usa.svg",
+    "country_code": "US"
+  },
+  {
+    "name": "Uruguay",
+    "code": "+598",
+    "flag": "https:\/\/restcountries.eu\/data\/ury.svg",
+    "country_code": "UY"
+  },
+  {
+    "name": "Uzbekistan",
+    "code": "+998",
+    "flag": "https:\/\/restcountries.eu\/data\/uzb.svg",
+    "country_code": "UZ"
+  },
+  {
+    "name": "Vanuatu",
+    "code": "+678",
+    "flag": "https:\/\/restcountries.eu\/data\/vut.svg",
+    "country_code": "VU"
+  },
+  {
+    "name": "Venezuela (Bolivarian Republic of)",
+    "code": "+58",
+    "flag": "https:\/\/restcountries.eu\/data\/ven.svg",
+    "country_code": "VE"
+  },
+  {
+    "name": "Viet Nam",
+    "code": "+84",
+    "flag": "https:\/\/restcountries.eu\/data\/vnm.svg",
+    "country_code": "VN"
+  },
+  {
+    "name": "Wallis and Futuna",
+    "code": "+681",
+    "flag": "https:\/\/restcountries.eu\/data\/wlf.svg",
+    "country_code": "WF"
+  },
+  {
+    "name": "Western Sahara",
+    "code": "+212",
+    "flag": "https:\/\/restcountries.eu\/data\/esh.svg",
+    "country_code": "EH"
+  },
+  {
+    "name": "Yemen",
+    "code": "+967",
+    "flag": "https:\/\/restcountries.eu\/data\/yem.svg",
+    "country_code": "YE"
+  },
+  {
+    "name": "Zambia",
+    "code": "+260",
+    "flag": "https:\/\/restcountries.eu\/data\/zmb.svg",
+    "country_code": "ZM"
+  },
+  {
+    "name": "Zimbabwe",
+    "code": "+263",
+    "flag": "https:\/\/restcountries.eu\/data\/zwe.svg",
+    "country_code": "ZW"
+  }
+]
