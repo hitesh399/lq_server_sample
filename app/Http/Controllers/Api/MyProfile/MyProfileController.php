@@ -5,27 +5,28 @@ namespace App\Http\Controllers\Api\MyProfile;
 use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Events\ChangedEmail;
 use App\Models\Appointment;
 use Laravel\Passport\Passport;
-use App\Events\ChangedMobileNumber;
 use League\OAuth2\Server\CryptTrait;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\Api\Auth\Concerns\FindUser;
+
 /**
- * Edit, View of User Profile
+ * Edit, View of User Profile.
  *
  * @category My Profile
- * @package  My Profile
+ *
  * @author   Sachiln Kumar <sachin@singsys.com>
  * @license  PHP License 7.1.25
- * @link
+ *
+ * @see
  */
 class MyProfileController extends Controller
 {
-    use FindUser, CryptTrait;
+    use FindUser;
+    use CryptTrait;
 
     /**
      * Display a listing of the resource.
@@ -36,13 +37,13 @@ class MyProfileController extends Controller
     {
         $user = \Auth::user();
         $role = $user->role()->first();
-        $relations =  $role->name == 'consultant' ?
+        $relations = $role->name == 'consultant' ?
             [
                 'services' => function ($q) {
                     $q->with(
                         [
                             'image',
-                            'serviceUser'
+                            'serviceUser',
                         ]
                     );
                 },
@@ -51,11 +52,11 @@ class MyProfileController extends Controller
                 'country',
                 'city',
                 'profileImage',
-                'role'
+                'role',
             ]
             :
             [
-                'userCards','profileImage','country','city','role'
+                'userCards', 'profileImage', 'country', 'city', 'role',
             ];
 
         $user = User::with($relations)->where('id', $user->id)->first();
@@ -72,8 +73,9 @@ class MyProfileController extends Controller
     /**
      * Update the User Details.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
@@ -85,67 +87,63 @@ class MyProfileController extends Controller
             'email' => 'email|unique:users,email,'.Auth::id(),
             'pincode' => 'between:4, 8',
             'date_of_birth' => 'date|date_format:Y-m-d',
-            'contact_number' =>  ['regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/','unique:users,contact_number,'.Auth::id()],
+            'mobile_no' => ['regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/', 'unique:users,mobile_no,'.Auth::id()],
             'address' => 'max:100',
-            'about_me' => 'max:255'
+            'about_me' => 'max:255',
         ],
         [
-            'contact_number.regex' => 'The Mobile Number is not valid.'
+            'mobile_no.regex' => 'The Mobile Number is not valid.',
         ],
         [
-            'contact_number' => 'Mobile Number'
+            'mobile_no' => 'Mobile Number',
         ]);
         $user = Auth::user();
         $old_email = $user->email;
         $new_email = $request->email;
-        $old_number = $user->contact_number;
-        $new_number = $request->contact_number;
-        $email_verification = $old_email != $new_email ? 'No' : 'Yes';
-        $mobile_verification = $old_number != $new_number ? 'No' : 'Yes';
+        $old_number = $user->mobile_no;
+        $new_number = $request->mobile_no;
+        $email_verified_at = $old_email != $new_email ? null : date('Y-m-d H:i:s');
+        $mobile_no_verified_at = $old_number != $new_number ? null : date('Y-m-d H:i:s');
         $user->update(
             [
-                'name'  => $request->name,
+                'name' => $request->name,
                 'email' => $new_email,
                 'date_of_birth' => $request->date_of_birth,
-                'contact_number' => $new_number,
+                'mobile_no' => $new_number,
                 'address' => $request->address,
                 'country_id' => $request->country,
                 'city_id' => $request->city,
                 'pincode' => $request->pincode,
                 'about_me' => $request->about_me,
-                'email_verification' => $email_verification,
-                'mobile_verification' => $mobile_verification
+                'email_verified_at' => $email_verified_at,
+                'mobile_no_verified_at' => $mobile_no_verified_at,
             ]
         );
-        if($email_verification === 'No') {
-            event(new ChangedEmail($user));
-        }
-        if($mobile_verification === 'No') {
-            event(new ChangedMobileNumber($user));
-        }
-        $user->load(['country', 'city']);
 
         return $this->setData([
-            'data' => $user
+            'data' => $user,
         ])->setMessage('Record Updated Successfully')->response();
     }
 
-    public function myProfilePhoto(Request $request){
+    public function myProfilePhoto(Request $request)
+    {
         $this->validate($request,
             [
-                'profileImage.file' => 'mimes:jpeg,jpg,png,gif'
+                'profileImage.file' => 'mimes:jpeg,jpg,png,gif',
             ]
         );
         $user = Auth::user();
         $user->profileImage()->addMedia($request->profileImage, 'profile_image');
+
         return $this->setData(
             [
-                'data' => $user
+                'data' => $user,
             ]
         )->response();
     }
 
-    public function appointmentsCounts(){
+    public function appointmentsCounts()
+    {
         $user = \Auth::user();
         $role = $user->role()->first();
         $date = date('Y-m-d');
@@ -153,31 +151,31 @@ class MyProfileController extends Controller
 
         if ($role->name == 'customer') {
             $condition = 'customer_id';
-        } else if ($role->name === 'consultant') {
-        	$condition = 'consultant_id';
+        } elseif ($role->name === 'consultant') {
+            $condition = 'consultant_id';
         } else {
-        	abort(404);
+            abort(404);
         }
-        $appointments['total_appointment'] =  Appointment::where($condition, $user->id)->count();
-        $appointments['today_appointment'] =  Appointment::where($condition, $user->id)->where('scheduled_at', $date)->count();
+        $appointments['total_appointment'] = Appointment::where($condition, $user->id)->count();
+        $appointments['today_appointment'] = Appointment::where($condition, $user->id)->where('scheduled_at', $date)->count();
 
-        $appointments['past_appointment'] =  Appointment::where($condition, $user->id)->whereDate('scheduled_at','<',$date)->count();
+        $appointments['past_appointment'] = Appointment::where($condition, $user->id)->whereDate('scheduled_at', '<', $date)->count();
 
-        $appointments['upcoming_appointment'] =  Appointment::where($condition, $user->id)
-        ->where('scheduled_at','>',$date)
+        $appointments['upcoming_appointment'] = Appointment::where($condition, $user->id)
+        ->where('scheduled_at', '>', $date)
         ->where('status', 'confirm')
         ->count();
 
-        $appointments['pending_appointment'] =  Appointment::where(
+        $appointments['pending_appointment'] = Appointment::where(
             $condition, $user->id
         )->where('status', 'pending')->count();
 
         return $this->setData($appointments)
-   			->response();
+            ->response();
     }
 
     /**
-     * To Logout the User and invoke the token if client is ios or android
+     * To Logout the User and invoke the token if client is ios or android.
      *
      * @param Illuminate\Http\Request
      *
@@ -185,7 +183,6 @@ class MyProfileController extends Controller
      */
     public function logout(Request $request)
     {
-
         if ($request->user()) {
             $user_id = \Auth::id();
             $socket_id = $request->socket_id;
@@ -202,38 +199,37 @@ class MyProfileController extends Controller
             )->first();
         }
 
-        /**
+        /*
          * Deactivate other User on Same device.
          */
         $request->device()->users()->syncWithoutDetaching(
             [
-                $request->user()->id => ['active' => 'No']
+                $request->user()->id => ['active' => 'No'],
             ]
         );
 
         $this->setMessage(trans('auth.logout_success'));
+
         return $this->response();
     }
 
-     /**
+    /**
      * To Reset the User password.
      *
      * @param Illuminate\Http\Request
      *
      * @return \Illuminate\Http\Response
      */
-    public function resetPassword(Request $request) {
-
-        $this->validate($request,[
-
-            'old_password'          => 'required',
-            'password' 				=> ['required', 'min:8','max:16'],
-    		'confirm_password' 		=> 'required_with:password|same:password',
+    public function resetPassword(Request $request)
+    {
+        $this->validate($request, [
+            'old_password' => 'required',
+            'password' => ['required', 'min:8', 'max:16'],
+            'confirm_password' => 'required_with:password|same:password',
         ]);
 
         // When old password does not match.
         if (!\Hash::check($request->old_password, $request->user()->password)) {
-
             throw ValidationException::withMessages([
                 'old_password' => [trans('auth.old_password_wrong')],
             ]);
@@ -241,10 +237,12 @@ class MyProfileController extends Controller
         $request->user()->update(['password' => \Hash::make($request->password)]);
 
         $this->setMessage(trans('auth.password_changed_success'));
+
         return $this->response();
     }
+
     /**
-     * My Profile Status
+     * My Profile Status.
      */
     public function myProfileStatus(Request $request)
     {
@@ -264,6 +262,7 @@ class MyProfileController extends Controller
                 $not_completed[] = 'card';
             }
         }
+
         return $this->setData(['not_completed' => $not_completed])->response();
     }
 }

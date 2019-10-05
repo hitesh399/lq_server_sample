@@ -2,17 +2,22 @@
 
 namespace App\Models;
 
+use EloquentFilter\Filterable;
 use Laravel\Passport\HasApiTokens;
 use Singsys\LQ\Lib\Concerns\LqToken;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Singsys\LQ\Lib\Media\Relations\Concerns\HasMediaRelationships;
 
 class User extends Authenticatable
 {
-    use Notifiable, LqToken, SoftDeletes, HasApiTokens, HasMediaRelationships;
+    use Notifiable;
+    use LqToken;
+    use SoftDeletes;
+    use HasApiTokens;
+    use HasMediaRelationships;
+    use Filterable;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'mobile_no', 'email_verified_at', 'mobile_no_verified_at', 'role_id'
+        'name', 'email', 'timezone', 'password', 'mobile_no', 'email_verified_at', 'mobile_no_verified_at', 'role_id',
     ];
 
     /**
@@ -29,7 +34,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token'
+        'password', 'remember_token',
     ];
 
     /**
@@ -43,11 +48,11 @@ class User extends Authenticatable
         'mobile_no' => 'string',
         'role_id' => 'int',
         'name' => 'string',
-        'email' => 'string'
+        'email' => 'string',
     ];
 
     /**
-     * To get the user role information
+     * To get the user role information.
      */
     public function role()
     {
@@ -57,13 +62,15 @@ class User extends Authenticatable
     public function devices()
     {
         return $this->belongsToMany(Device::class)->withPivot([
-            'settings', 'login_index', 'active'
+            'settings', 'login_index', 'active',
         ])->using(Relations\DevicePivot::class);
     }
+
     public function profileImage()
     {
         return $this->morphOneMedia(\Config::get('lq.media_model_instance'), 'mediable', 'image', __FUNCTION__);
     }
+
     public function photos()
     {
         return $this->morphManyMedia(\Config::get('lq.media_model_instance'), 'mediable', 'user_photos', __FUNCTION__);

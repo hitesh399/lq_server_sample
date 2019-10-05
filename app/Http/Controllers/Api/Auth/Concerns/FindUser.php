@@ -40,14 +40,14 @@ trait FindUser
         } else {
             $this->user = User::where('id', $user_id);
         }
-        $this->user = $this->user->with('role')->withTrashed()->first();
+        $this->user = $this->user->with('role')->with(['profileImage'])->withTrashed()->first();
 
         /*
          * If user does not exists in  database.
          */
         if (!$this->user) {
             throw ValidationException::withMessages([
-                $this->username() => [trans('auth.user_not_exist')],
+                $this->username() => [trans('User does not exist')],
             ]);
         }
 
@@ -67,29 +67,46 @@ trait FindUser
             return 'email';
         } elseif (preg_match('/^(\+|[0-9]){1,3}(\-)([0-9]){6,12}$/', $request->{$this->username()})) {
             return 'mobile_no';
-        } else {
-            return 'user_name';
         }
     }
 
     /**
-     * Check if user tring to login with unverified email or mobile.
+     * Finding the label, which is using by user to the login attamp like: email,mobile_no,password.
      *
-     * @param \Illuminate\Http\Request $request request data
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return string
+     */
+    private function checkAccountstatus(Request $request)
+    {
+        $user = User::where('email', $request->{$this->username()})
+            ->orWhere('mobile_no', $request->{$this->username()})
+            ->first();
+        if ($user->status === 'inactive') {
+            $this->setErrorCode('account_in_deactivated_mode');
+            throw ValidationException::withMessages([
+                    $this->username() => [trans('Your account is inactive mode please contact to your Admin or wait sometime.')],
+                ]);
+        }
+    }
+
+    /**
+     * Check if user tring to login with unverified email or contact number.
+     *
+     * @param \Illuminate\Http\Request $request
      *
      * @return Throw Exception
      **/
-    private function hasUnverifiedLabel(Request $request)
+    protected function hasUnverifiedLabel(Request $request)
     {
         $label = $this->getLoginLabel($request);
         $user = $this->user;
-
         if ($label == 'email' && !$user->email_verified_at) {
             $this->setErrorCode('email_not_verified');
             throw ValidationException::withMessages([
                 $this->username() => [trans('auth.email_not_verified')],
             ]);
-        } elseif ($label == 'mobile_no' && !$user->mobile_verified_at) {
+        } elseif ($label == 'mobile_no' && !$user->mobile_no_verified_at) {
             $this->setErrorCode('mobile_not_verified');
             throw ValidationException::withMessages([
                 $this->username() => [trans('auth.mobile_not_verified')],
@@ -106,8 +123,38 @@ trait FindUser
         if ($user->deleted_at) {
             $this->setErrorCode('account_suspended');
             throw ValidationException::withMessages([
-                $this->username() => [trans('auth.account_suspended')],
+                $this->username() => [trans('Account suspended')],
             ]);
         }
+    }
+
+    /**
+     * To check the User is hitting the api from valid application.
+     *
+     * @param $request Illuminate\Http\Request
+     *
+     * @return throw ValidationException
+     * @return bool
+     */
+    private function _portalAccess(Request $request, $user = null)
+    {
+        $user = $user ? $user : $this->user;
+        /**
+         * Every user should have role and role should also have the access of current application.
+         */
+        $client_id = $request->client()->id;
+        $client_has_portal_access = in_array(
+            $client_id, ($user->role->client_ids ? $user->role->client_ids : [])
+        );
+        if (!$client_has_portal_access) {
+            $this->setErrorCode('forbidden');
+            throw ValidationException::withMessages(
+                [
+                    $this->username() => [trans('auth.forbidden')],
+                ]
+            );
+        }
+
+        return true;
     }
 }

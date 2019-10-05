@@ -115,3 +115,56 @@ Route::put(
 
 Route::apiResource('media', 'Media\MediaController');
 Route::post('media-token', 'Media\MediaTokenController@store');
+/*
+ * Notification API
+ */
+Route::get(
+    'notification',
+    'MyNotificationController@index'
+)->name('mynotification.index');
+
+Route::patch(
+    'notification/{id?}',
+    'MyNotificationController@read'
+)->name('mynotification.read');
+Route::delete(
+    'notification/{id?}',
+    'MyNotificationController@delete'
+)->name('mynotification.delete');
+
+Route::get(
+    'notification/total-unread',
+    'MyNotificationController@unRead'
+)->name('mynotification.total-unread');
+Route::put(
+    'notification/enable-disable',
+    'UserDeviceController@changeStatusNotification'
+)->name('mynotification.push-notification-setting');
+Route::put(
+    'notification/enable-disable/mail',
+    'UserDeviceController@changeMailNotificationStatus'
+)->name('mynotification.email-notification-setting');
+
+Route::get(
+    'my-device',
+    'UserDeviceController@deviceInfo'
+)->name('my-device.info');
+Route::apiResource('role', 'RoleController')->name('role', null);
+Route::apiResource('permission', 'PermissionController')->name('permission', null);
+Route::apiResource(
+    'permission-group', 'PermissionGroupController'
+)->only(['index'])->name('permission-group', null);
+
+Route::apiResource(
+    'oauth-client',
+    'OauthClientController'
+)->only(
+    [
+        'index',
+    ]
+)->name('oauth-client', null);
+Route::apiResource('admin', 'User\AdminController')->name('admin', null);
+Route::post(
+    'admin/{id}/change-status',
+    'User\AdminController@userChangeStatus'
+)->name('admin.change-status');

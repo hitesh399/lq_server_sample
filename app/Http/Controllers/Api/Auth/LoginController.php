@@ -347,21 +347,21 @@ class LoginController extends Controller
         $user = User::find($token_data->user_id);
         $label = ($token_data->for == 'email_verification') ? 'email' : 'mobile number';
         if ($token_data->for == 'email_verification') {
-            if ($user->email_verification == 'Yes') {
+            if ($user->email_verified_at) {
                 $this->setMessage('Your email id already verified')
                     ->setErrorCode('email_already_verified');
 
                 throw ValidationException::withMessages([]);
             }
-            $user->email_verification = 'Yes';
+            $user->email_verified_at = date('Y-m-d H:i:s');
         } else {
-            if ($user->mobile_verification == 'Yes') {
+            if ($user->mobile_no_verified_at) {
                 $this->setMessage('Your mobile number already verified')
                     ->setErrorCode('mobile_already_verified');
 
                 throw ValidationException::withMessages([]);
             }
-            $user->mobile_verification = 'Yes';
+            $user->mobile_no_verified_at = date('Y-m-d H:i:s');
         }
 
         $user->save();
