@@ -19,6 +19,7 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
+        sleep(2);
         $admins = User::filter(
             $request->all(),
             UserFilter::class

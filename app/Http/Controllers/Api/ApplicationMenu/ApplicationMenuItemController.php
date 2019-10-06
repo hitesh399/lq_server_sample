@@ -25,18 +25,19 @@ class ApplicationMenuItemController extends Controller
                 'description',
                 'application_menu_id',
                 'permission_ids',
-                'parent_id'
+                'parent_id',
             ]
         )->with(
             [
                 'permissions' => function ($q) {
                     $q->with('permissionFields');
-                }
+                },
             ]
         )->orderBy('menu_order')->lqPaginate();
 
         return $this->setData($application_menu_items)->response();
     }
+
     public function store(Request $request)
     {
         $this->_validationRule($request);
@@ -48,13 +49,15 @@ class ApplicationMenuItemController extends Controller
                 'description' => $request->description,
                 'application_menu_id' => $request->application_menu,
                 'permission_ids' => $request->permissions,
-                'parent_id' => $request->parent
+                'parent_id' => $request->parent,
             ]
         );
+
         return $this->setData([
-            'application_menu_item' => $application_menu_item
+            'application_menu_item' => $application_menu_item,
         ])->response();
     }
+
     public function update($id, Request $request)
     {
         $this->_validationRule($request, $id);
@@ -67,35 +70,42 @@ class ApplicationMenuItemController extends Controller
                 'description' => $request->description,
                 'application_menu_id' => $request->application_menu,
                 'permission_ids' => $request->permissions,
-                'parent_id' => $request->parent
+                'parent_id' => $request->parent,
             ]
         );
+
         return $this->setData([
-            'application_menu_item' => $application_menu_item
+            'application_menu_item' => $application_menu_item,
         ])->response();
     }
+
     public function show($id)
     {
         $application_menu_item = ApplicationMenuItem::findOrFail($id);
         $application_menu_item->load(['parent', 'permissions', 'applicationMenu']);
 
         return $this->setData([
-            'application_menu_item' => $application_menu_item
+            'application_menu_item' => $application_menu_item,
         ])->response();
     }
+
     public function destroy($id)
     {
         $application_menu_item = ApplicationMenuItem::findOrFail($id);
         $application_menu_item->delete();
+
         return $this->setData([
-            'application_menu_item' => $application_menu_item
+            'application_menu_item' => $application_menu_item,
         ])->response();
     }
+
     public function reArrange(Request $request)
     {
         ApplicationMenuItem::batchInsertUpdate($request->data, ['menu_order', 'parent_id']);
+
         return $this->setMessage('Updated')->response();
     }
+
     private function _validationRule(Request $request, $id = null)
     {
         $this->validate($request, [
@@ -104,7 +114,7 @@ class ApplicationMenuItemController extends Controller
             'show_in_menu' => ['required', 'in:Yes,No'],
             'description' => ['required'],
             'application_menu' => ['required'],
-            'permissions' => ['array'],
+            'permissions' => ['nullable', 'array'],
             // 'parent' => ['array'],
             // 'menu_order' => 'required'
         ]);
