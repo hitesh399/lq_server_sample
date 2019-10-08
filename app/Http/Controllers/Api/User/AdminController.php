@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api\User;
 
-use Auth;
 use App\Models\User;
 use App\Events\Registered;
 use Illuminate\Support\Str;
@@ -94,11 +93,11 @@ class AdminController extends Controller
             $request,
             [
                 'name' => 'max:25',
-                'email' => 'email|unique:users,email,'.Auth::id(),
+                'email' => 'email|unique:users,email,'.$id,
                 'role' => 'required',
                 'mobile_no' => [
                     'regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/',
-                    'unique:users,mobile_no,'.Auth::id(),
+                    'unique:users,mobile_no,'.$id,
                 ],
             ],
             [
