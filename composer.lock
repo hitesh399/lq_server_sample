@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "92c3e93d6c0d245b893aa203dc52413c",
+    "content-hash": "42c479aa47887d340a91351a2f0b916b",
     "packages": [
         {
             "name": "aloha/twilio",
@@ -2292,16 +2292,16 @@
         },
         {
             "name": "singsys/laravel-quick",
-            "version": "dev-master",
+            "version": "0.2-alpha",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hitesh399/lq.git",
-                "reference": "74e5ac36fade3f4394ca22f8e93fdf32e3560403"
+                "reference": "0d90d512c99fb23e3a64d51b3cb6333e20803a30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hitesh399/lq/zipball/74e5ac36fade3f4394ca22f8e93fdf32e3560403",
-                "reference": "74e5ac36fade3f4394ca22f8e93fdf32e3560403",
+                "url": "https://api.github.com/repos/hitesh399/lq/zipball/0d90d512c99fb23e3a64d51b3cb6333e20803a30",
+                "reference": "0d90d512c99fb23e3a64d51b3cb6333e20803a30",
                 "shasum": ""
             },
             "require": {
@@ -2330,7 +2330,7 @@
                     "email": "hitesh@singsys.com"
                 }
             ],
-            "time": "2019-10-10T18:10:02+00:00"
+            "time": "2019-10-10T18:26:21+00:00"
         },
         {
             "name": "staudenmeir/eloquent-json-relations",
@@ -5915,9 +5915,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "singsys/laravel-quick": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
