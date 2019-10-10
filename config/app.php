@@ -173,7 +173,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        // Singsys\LQ\LqServiceProvider::class,
+        Singsys\LQ\LqServiceProvider::class,
     ],
 
     /*

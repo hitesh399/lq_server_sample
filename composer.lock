@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "660efd0ded406d9e202d1840ed92a51e",
+    "content-hash": "30bb28b84e7154718ebce3a197a14161",
     "packages": [
         {
             "name": "aloha/twilio",
@@ -1799,6 +1799,56 @@
             "time": "2019-05-26T20:38:34+00:00"
         },
         {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
+        },
+        {
             "name": "psr/container",
             "version": "1.0.0",
             "source": {
@@ -2239,6 +2289,48 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "singsys/laravel-quick",
+            "version": "0.2-alpha",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hitesh399/lq.git",
+                "reference": "0d90d512c99fb23e3a64d51b3cb6333e20803a30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hitesh399/lq/zipball/0d90d512c99fb23e3a64d51b3cb6333e20803a30",
+                "reference": "0d90d512c99fb23e3a64d51b3cb6333e20803a30",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/passport": "^7.0",
+                "predis/predis": "^1.1",
+                "staudenmeir/eloquent-json-relations": "^1.1",
+                "wcadena/laravel-string-blade-compiler": "^1.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Singsys\\LQ\\LqServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Singsys\\LQ\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Hitesh Kumar",
+                    "email": "hitesh@singsys.com"
+                }
+            ],
+            "time": "2019-10-10T18:26:21+00:00"
         },
         {
             "name": "staudenmeir/eloquent-json-relations",
@@ -5823,7 +5915,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "singsys/laravel-quick": 15
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
