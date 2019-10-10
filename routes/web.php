@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Http\UploadedFile;
 
 /*
@@ -22,4 +23,5 @@ Route::get('/', function () {
     // $u->lqUpdate(['name' => 'Hitesh Kumar']);
     // dd($u);
     // dd($u->lqPaginate(['*'], true));
+    return 'OK';
 });
