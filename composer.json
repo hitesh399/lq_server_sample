@@ -55,9 +55,9 @@
     "prefer-stable": true,
     "scripts": {
         "post-autoload-dump": [
+            "@php artisan make:env",
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi",
-            "@php artisan make:env"
+            "@php artisan package:discover --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.production', '.env');\""
