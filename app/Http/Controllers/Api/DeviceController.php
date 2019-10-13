@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Models\Device;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Laravel\Passport\Passport;
-use Illuminate\Support\Facades\Crypt;
 use App\ModelFilters\Universal\DeviceFilter;
-use App\Models\Device;
+use Illuminate\Validation\ValidationException;
 
 class DeviceController extends Controller
 {
@@ -18,38 +17,64 @@ class DeviceController extends Controller
      */
     public function index(Request $request)
     {
-        //
         $devices = Device::filter($request->all(), DeviceFilter::class)->paginate($request->page_size);
+
         return $this->setData($devices)
         ->response();
     }
 
     public function revokedDeviceUser(Request $request, $user_id)
     {
-        $user_device  = $request->device()->users()->where('users.id', $user_id)->first();
+        $user_device = $request->device()->users()->where('users.id', $user_id)->first();
         if ($user_device) {
             $request->device()->users()->syncWithoutDetaching([$user_id => ['active' => 'No', 'revoked' => '1']]);
         }
+
         return $this->setMessage('User Has been revoked.')->response();
     }
+
     /**
      * To get login user of the given device.
-     * @param Illuminate\Http\Request
+     *
+     * @param Illuminate\Http\Request $request [All Request]
+     *
      * @return \Illuminate\Http\Response
      */
     public function deviceLoginUser(Request $request)
     {
         $users = $request->device()->users()
             ->where('device_user.revoked', '0')
-            ->with(['role'=>function ($q) {
-                $q->select('id', 'landing_portal', 'title');
-            }])
-        ->select(['users.id', 'users.name', 'role_id'])->get()->map(function ($q) {
-            return $q->setHidden(['role_id']);
-        });
+            ->select(['users.id', 'users.name'])->get();
 
-        return $this->setData([
-            'device_users' => $users
-        ])->response();
+        return $this->setData(
+            [
+                'device_users' => $users,
+            ]
+        )->response();
+    }
+
+    public function switchRole(Request $request, $role_id)
+    {
+        $has_role = $request->user()->roles->where('id', $role_id)->first();
+        if (!$has_role) {
+            $this->setErrorCode('role_not_allowed');
+            throw ValidationException::withMessages([]);
+        }
+
+        $request->device()->users()
+            ->syncWithoutDetaching(
+                [
+                    \Auth::id() => [
+                        'active' => 'Yes',
+                        'role_id' => $role_id,
+                        'revoked' => '0',
+                    ],
+                ]
+            );
+        $permission = app('permission');
+        $permission->setCurrentRoleIds([$role_id]);
+        $my_profile = new Auth\MyProfileController();
+
+        return $my_profile->index($request);
     }
 }

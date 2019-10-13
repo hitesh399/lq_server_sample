@@ -7,15 +7,15 @@ use EloquentFilter\ModelFilter;
 class RequestLogFilter extends ModelFilter
 {
     /**
-    * Related Models that have ModelFilters as well as the method on the ModelFilter
-    * As [relationMethod => [input_key1, input_key2]].
-    *
-    * @var array
-    */
+     * Related Models that have ModelFilters as well as the method on the ModelFilter
+     * As [relationMethod => [input_key1, input_key2]].
+     *
+     * @var array
+     */
     public $relations = [];
 
-    public function setup() {
-
+    public function setup()
+    {
         $this->select([
             'request_logs.url',
             'request_logs.route_name',
@@ -29,20 +29,20 @@ class RequestLogFilter extends ModelFilter
             'request_logs.request_headers',
             'request_logs.response_headers',
             'request_logs.request',
-            'request_logs.response'
+            'request_logs.response',
         ])
-        ->with(['device','user','client'])
+        ->with(['device', 'user', 'client'])
         ->orderBy('request_logs.id', 'DESC');
     }
 
     /**
-     * To get the request log according to given keywords
+     * To get the request log according to given keywords.
+     *
      * @param $val String
-     * @return void
      */
-    public function search($val) {
-
-        $this->where(function ($q) use( $val ) {
+    public function search($val)
+    {
+        $this->where(function ($q) use ($val) {
             $q->orWhere('request_logs.url', 'LIKE', "%{$val}%")
                 ->orWhere('request_logs.route_name', 'LIKE', "%{$val}%")
                 ->orWhere('request_logs.request_method', 'LIKE', "%{$val}%")
@@ -54,37 +54,37 @@ class RequestLogFilter extends ModelFilter
     }
 
     /**
-     * To get the request log of given user
+     * To get the request log of given user.
+     *
      * @param $user_id Integer
-     * @return void
      */
-    public function user($user_id){
-
+    public function user($user_id)
+    {
         $this->where('request_logs.user_id', $user_id);
     }
-    public function responseStatus($val) 
+
+    public function responseStatus($val)
     {
         $this->where('request_logs.response_status', $val);
     }
 
     /**
-     * To get the request log of given device
+     * To get the request log of given device.
+     *
      * @param $device_id Integer
-     * @return void
      */
-    public function device($device_id){
-
+    public function device($device_id)
+    {
         $this->where('request_logs.device_id', $device_id);
     }
 
     /**
-     * To get the request log of given client
+     * To get the request log of given client.
+     *
      * @param $client_id Integer
-     * @return void
      */
-    public function client($client_id){
-
+    public function client($client_id)
+    {
         $this->where('request_logs.client_id', $client_id);
     }
-
 }

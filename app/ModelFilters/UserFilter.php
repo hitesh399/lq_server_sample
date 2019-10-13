@@ -55,7 +55,7 @@ class UserFilter extends ModelFilter
     {
         $client_id = app()->make(Request::class)->client()->id;
         $this->whereHas(
-            'role', function ($q) use ($client_id) {
+            'roles', function ($q) use ($client_id) {
                 $q->whereJsonContains('client_ids', $client_id);
             }
         );

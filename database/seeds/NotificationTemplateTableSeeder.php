@@ -6,8 +6,6 @@ class NotificationTemplateTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
@@ -23,9 +21,9 @@ class NotificationTemplateTableSeeder extends Seeder
                     'link',
                     'user.email',
                     'user.mobile_no',
-                    'user_verification.token'
-                ]
-            ]
+                    'user_verification.token',
+                ],
+            ],
         ]);
 
         $model::updateOrCreate(['name' => 'FORGET_PASSWORD_EMAIL'], [
@@ -38,25 +36,9 @@ class NotificationTemplateTableSeeder extends Seeder
                     'link',
                     'user.email',
                     'user.mobile_no',
-                    'user_verification.token'
-                ]
-            ]
-        ]);
-
-        $model::updateOrCreate(['name' => 'FORGET_PASSWORD_SMS'], [
-            'name' => 'FORGET_PASSWORD_SMS',
-            'type' => 'sms',
-            'subject' => 'Reset Password Link',
-            'body' => 'Dear {user.name}, Your token is {user_verification.token} to reset the password.',
-            'options' => [
-                'variables' => [
-                    'user.name',
-                    'link',
-                    'user.email',
-                    'user.mobile_no',
-                    'user_verification.token'
-                ]
-            ]
+                    'user_verification.token',
+                ],
+            ],
         ]);
 
         $model::updateOrCreate(['name' => 'EMAIL_VERFICATION_EMAIL'], [
@@ -69,9 +51,9 @@ class NotificationTemplateTableSeeder extends Seeder
                     'link',
                     'user.email',
                     'user.mobile_no',
-                    'user_verification.token'
-                ]
-            ]
+                    'user_verification.token',
+                ],
+            ],
         ]);
 
         $model::updateOrCreate(['name' => 'MOBILE_VERFICATION_SMS'], [
@@ -85,9 +67,9 @@ class NotificationTemplateTableSeeder extends Seeder
                     'link',
                     'user.email',
                     'user.mobile_no',
-                    'user_verification.token'
-                ]
-            ]
+                    'user_verification.token',
+                ],
+            ],
         ]);
     }
 }

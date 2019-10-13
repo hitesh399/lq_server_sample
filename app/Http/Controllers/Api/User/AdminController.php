@@ -18,7 +18,6 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        sleep(2);
         $admins = User::filter(
             $request->all(),
             UserFilter::class
@@ -43,7 +42,7 @@ class AdminController extends Controller
             [
                 'name' => 'required|max:100',
                 'email' => 'required|email|unique:users|max:150',
-                'role' => 'required',
+                'roles' => 'required|array',
                 'mobile_no' => [
                     'required',
                     'unique:users',
@@ -66,11 +65,11 @@ class AdminController extends Controller
             $user_data,
             [
                 'password' => \Hash::make($password),
-                'role_id' => $request->role,
                 'status' => 'active',
             ]
         );
         $user = User::create($user_data);
+        $user->roles()->sync($request->roles);
 
         event(new Registered($user, $password));
 
@@ -94,7 +93,7 @@ class AdminController extends Controller
             [
                 'name' => 'max:25',
                 'email' => 'email|unique:users,email,'.$id,
-                'role' => 'required',
+                'roles' => 'required|array',
                 'mobile_no' => [
                     'regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/',
                     'unique:users,mobile_no,'.$id,
@@ -113,9 +112,10 @@ class AdminController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'mobile_no' => $request->mobile_no,
-                'role_id' => $request->role,
             ]
         );
+
+        $user->roles()->sync($request->roles);
 
         return $this->setData(['data' => $user])
             ->setMessage('Admin Updated Successfully')->response();
@@ -130,7 +130,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id)->load('role');
+        $user = User::findOrFail($id)->load('roles');
 
         return $this->setData(['data' => $user])->response();
     }

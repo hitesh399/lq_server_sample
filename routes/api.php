@@ -78,6 +78,9 @@ Route::patch(
     'device/user/{id}/revoke',
     'DeviceController@revokedDeviceUser'
 )->name('device-user-revoke');
+Route::get(
+    'device/role/{id}/switch', 'DeviceController@switchRole'
+)->name('device-role-switch');
 
 Route::apiResource(
     'notification-template',
@@ -85,7 +88,7 @@ Route::apiResource(
 )->name('notification-template', null);
 Route::get(
     'notification-template/email/header-footer',
-    'NotificationTemplateController@emailFooterHeader'
+    'NotificationTemplateController@emailBody'
 )->name('notification-template.header_footer');
 
 Route::apiResource('config', 'ConfigController')->name('config', null);

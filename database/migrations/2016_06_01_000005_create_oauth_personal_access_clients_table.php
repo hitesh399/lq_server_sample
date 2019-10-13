@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateConfigTable extends Migration
+class CreateOauthPersonalAccessClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class UpdateConfigTable extends Migration
      */
     public function up()
     {
-        Schema::table('site_config', function (Blueprint $table) {
-            //
-            $table->enum('config_type', ['global', 'private'])->default('global');
+        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('client_id')->index();
+            $table->timestamps();
         });
     }
 
@@ -26,9 +27,6 @@ class UpdateConfigTable extends Migration
      */
     public function down()
     {
-        Schema::table('site_config', function (Blueprint $table) {
-            //
-            $table->dropColumn('config_type');
-        });
+        Schema::dropIfExists('oauth_personal_access_clients');
     }
 }

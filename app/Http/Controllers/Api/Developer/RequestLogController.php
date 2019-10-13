@@ -11,12 +11,18 @@ class RequestLogController extends Controller
 {
     /**
      * To get the Request Log List.
-     * @param Illuminate\Http\Request
+     *
+     * @param Illuminate\Http\Request $request [All Request]
+     *
      * @return Illuminate\Http\JsonResponse
      */
-    public function index(Request $request) {
+    public function index(Request $request)
+    {
+        $request_log = RequestLog::filter(
+            $request->all(),
+            RequestLogFilter::class
+        )->lqPaginate();
 
-        $request_log = RequestLog::filter($request->all(), RequestLogFilter::class)->lqPaginate();
         return $this->setData($request_log)
             ->response();
     }

@@ -9,18 +9,19 @@ use Laravel\Passport\Passport;
 use League\OAuth2\Server\CryptTrait;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
+use App\Http\Resources\MyProfileResource;
 use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\Api\Auth\Concerns\FindUser;
 
 /**
- * Edit, View of User Profile.
+ * Authenticated User Profile.
  *
- * @category My Profile
+ * @category Auth
  *
- * @author   Sachiln Kumar <sachin@singsys.com>
- * @license  PHP License 7.1.25
+ * @author  Hitesh Kumar <live2hitesh@gmail.com>
+ * @license https://opensource.org/licenses/MIT MIT
  *
- * @see
+ * @see https://github.com/hitesh399
  */
 class MyProfileController extends Controller
 {
@@ -30,19 +31,31 @@ class MyProfileController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param \Illuminate\Http\Request $request Class contains all request data
+     *
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        $user = \Auth::user();
+        $this->findUser($request, \Auth::user());
+        $permission = app('permission');
+        $current_role_id = $permission->getCurrentRoleIds()[0];
 
-        $user = User::with(['role'])->where('id', $user->id)->first();
-        $permissions = $user->role->menuItems()->get()->pluck('name');
-        $user->setRelation('permissions', $permissions);
+        $role_id = (
+            $this->_user->role_access_type == 'one_at_time'
+        ) ? $current_role_id : null;
+
+        if ($role_id) {
+            $this->_user->setRelation(
+                'role',
+                $this->_user->roles->where('id', $role_id)->first()
+            );
+        }
+        $this->_setPermission($this->_user, $role_id);
 
         return $this->setData(
             [
-                'user' => $user,
+                'user' => new MyProfileResource($this->_user),
             ]
         )->response();
     }
@@ -50,37 +63,44 @@ class MyProfileController extends Controller
     /**
      * Update the User Details.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
+     * @param \Illuminate\Http\Request $request Class contains all request data
      *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request)
     {
-        $this->validate($request,[
-            'name' => 'max:25',
-            'country' => 'int',
-            'city' => 'int',
-            'email' => 'email|unique:users,email,'.Auth::id(),
-            'pincode' => 'between:4, 8',
-            'date_of_birth' => 'date|date_format:Y-m-d',
-            'mobile_no' => ['regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/', 'unique:users,mobile_no,'.Auth::id()],
-            'address' => 'max:100',
-            'about_me' => 'max:255',
-        ],
-        [
-            'mobile_no.regex' => 'The Mobile Number is not valid.',
-        ],
-        [
-            'mobile_no' => 'Mobile Number',
-        ]);
+        $this->validate(
+            $request,
+            [
+                'name' => 'max:25',
+                'country' => 'int',
+                'city' => 'int',
+                'email' => 'email|unique:users,email,'.Auth::id(),
+                'pincode' => 'between:4, 8',
+                'date_of_birth' => 'date|date_format:Y-m-d',
+                'mobile_no' => [
+                    'regex:/^\+?([0-9]){1,4}-([0-9]){6,12}$/',
+                    'unique:users,mobile_no,'.Auth::id(),
+                ],
+                'address' => 'max:100',
+                'about_me' => 'max:255',
+            ],
+            [
+                'mobile_no.regex' => 'The Mobile Number is not valid.',
+            ],
+            [
+                'mobile_no' => 'Mobile Number',
+            ]
+        );
+        $now = date('Y-m-d H:i:s');
         $user = Auth::user();
         $old_email = $user->email;
         $new_email = $request->email;
         $old_number = $user->mobile_no;
         $new_number = $request->mobile_no;
-        $email_verified_at = $old_email != $new_email ? null : date('Y-m-d H:i:s');
-        $mobile_no_verified_at = $old_number != $new_number ? null : date('Y-m-d H:i:s');
+        $email_verified_at = $old_email != $new_email ? null : $now;
+        $mobile_no_verified_at = $old_number != $new_number ? null : $now;
+
         $user->update(
             [
                 'name' => $request->name,
@@ -97,14 +117,24 @@ class MyProfileController extends Controller
             ]
         );
 
-        return $this->setData([
-            'data' => $user,
-        ])->setMessage('Record Updated Successfully')->response();
+        return $this->setData(
+            [
+                'data' => $user,
+            ]
+        )->setMessage('Record Updated Successfully')->response();
     }
 
+    /**
+     * To update profile photot.
+     *
+     * @param \Illuminate\Http\Request $request Class contains all request data
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function myProfilePhoto(Request $request)
     {
-        $this->validate($request,
+        $this->validate(
+            $request,
             [
                 'profileImage.file' => 'mimes:jpeg,jpg,png,gif',
             ]
@@ -122,7 +152,7 @@ class MyProfileController extends Controller
     /**
      * To Logout the User and invoke the token if client is ios or android.
      *
-     * @param Illuminate\Http\Request
+     * @param \Illuminate\Http\Request $request Class contains all request data
      *
      * @return \Illuminate\Http\Response
      */
@@ -161,23 +191,27 @@ class MyProfileController extends Controller
     /**
      * To Reset the User password.
      *
-     * @param Illuminate\Http\Request
+     * @param \Illuminate\Http\Request $request Class contains all request data
      *
      * @return \Illuminate\Http\Response
      */
     public function resetPassword(Request $request)
     {
-        $this->validate($request, [
-            'old_password' => 'required',
-            'password' => ['required', 'min:8', 'max:16'],
-            'confirm_password' => 'required_with:password|same:password',
-        ]);
+        $this->validate(
+            $request, [
+                'old_password' => 'required',
+                'password' => ['required', 'min:8', 'max:16'],
+                'confirm_password' => 'required_with:password|same:password',
+            ]
+        );
 
         // When old password does not match.
         if (!\Hash::check($request->old_password, $request->user()->password)) {
-            throw ValidationException::withMessages([
-                'old_password' => [trans('auth.old_password_wrong')],
-            ]);
+            throw ValidationException::withMessages(
+                [
+                    'old_password' => [trans('auth.old_password_wrong')],
+                ]
+            );
         }
         $request->user()->update(['password' => \Hash::make($request->password)]);
 
