@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Singsys\LQ\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
