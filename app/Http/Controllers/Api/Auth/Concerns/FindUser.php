@@ -50,7 +50,7 @@ trait FindUser
      * To Get User Profile.
      *
      * @param \Illuminate\Http\Request $request Class contains all request data
-     * @param int                      $user_id User table primary key
+     * @param \App\Models\User         $user    User Model
      *
      * @return Illuminate\Support\Collection
      */
@@ -72,10 +72,6 @@ trait FindUser
         } else {
             $this->_user = $user;
         }
-        $this->_user->load(
-            ['roles.menuItems', 'profileImage']
-        );
-
         /*
          * If user does not exists in  database.
          */
@@ -86,7 +82,9 @@ trait FindUser
                 ]
             );
         }
-        $role_access_type = $request->client()->role_access_type;
+        $this->_user->load(
+            ['roles.menuItems', 'profileImage']
+        );
         $this->_user->setAppends(['role_access_type']);
         $this->_onlyAppRoles($request, $this->_user);
 
