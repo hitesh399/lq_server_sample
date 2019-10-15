@@ -55,7 +55,7 @@ class DeviceController extends Controller
 
     public function switchRole(Request $request, $role_id)
     {
-        $has_role = $request->user()->roles->where('id', $role_id)->first();
+        $has_role = $request->user()->roles()->where('id', $role_id)->first();
         if (!$has_role) {
             $this->setErrorCode('role_not_allowed');
             throw ValidationException::withMessages([]);
